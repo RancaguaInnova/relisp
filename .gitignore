@@ -47,6 +47,10 @@ build/Release
 node_modules/
 relisp_website/node_modules/
 relisp_admin/node_modules/
+
+#relisp_website/node_modules/
+relisp_website/build/
+relisp_admin/build/
 # Optional npm cache directory
 .npm
 
