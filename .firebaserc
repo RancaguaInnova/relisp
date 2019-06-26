@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "elis-ae942"
+  },
+  "targets": {
+    "elis-ae942": {
+      "hosting": {
+        "admin": [
+          "elis-admin"
+        ],
+        "relis": [
+          "elis-ae942"
+        ]
+      }
+    }
   }
 }
