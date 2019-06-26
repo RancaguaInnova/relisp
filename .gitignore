@@ -45,7 +45,8 @@ build/Release
 
 # Dependency directories
 node_modules/
-
+relisp_website/node_modules/
+relisp_admin/node_modules/
 # Optional npm cache directory
 .npm
 

@@ -1,0 +1,38 @@
+{
+    "name": "elis",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@firebase/app-types": "0.x",
+        "@firebase/util": "0.x",
+        "@material-ui/core": "^4.0.1",
+        "@material-ui/icons": "^4.0.1",
+        "aor-language-spanish": "^2.0.7",
+        "dotenv": "^8.0.0",
+        "material-design-icons": "^3.0.1",
+        "ra-core": "^2.5.0",
+        "ra-data-firebase-client": "^0.1.6",
+        "ra-data-json-server": "^2.0.0",
+        "ra-input-rich-text": "^2.9.2",
+        "react": "^16.8.0",
+        "react-admin": "^2.9.2",
+        "react-admin-firebase": "^0.5.6",
+        "react-dom": "^16.8.0",
+        "react-router": "^4.2.0",
+        "react-router-redux": "~5.0.0-alpha.9",
+        "react-scripts": "^2.0.5",
+        "redux-saga": "~0.16.0",
+        "typescript": "*"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "eject": "react-scripts eject"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
+}
