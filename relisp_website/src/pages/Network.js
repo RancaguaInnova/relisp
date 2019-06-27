@@ -82,12 +82,12 @@ export default class NetworkPage extends React.Component {
                     </p>
                   </div>
                   <div
-                    data-content='general text-left'
-                    className='red__objetivos__text -text text-left'
+                    data-content='general'
+                    className='red__objetivos__text -text text-left objectives-section'
                   >
                     <div>
-                      <h4>GENERAR SENTIDO DE PERTENENCIA A LA RED ELIS</h4>
-                      <p>- Definir los roles de los miembros de la RED ELIS </p>
+                      <h4>- GENERAR SENTIDO DE PERTENENCIA A LA RED ELIS</h4>
+                      {/* <p>- Definir los roles de los miembros de la RED ELIS </p>
                       <p>
                         - Identificar nuevos actores públicos, privados y tercer
                         sector que fortalezcan la Red.
@@ -95,12 +95,14 @@ export default class NetworkPage extends React.Component {
                       <p>
                         - Consensuar los principios y reglas de juego de los
                         participantes de la Red ELIS
-                      </p>
+                      </p> */}
                     </div>
 
                     <div>
-                      <h4>GENERAR PROYECTOS REGIONALES DE INNOVACIÓN SOCIAL</h4>
-                      <p>
+                      <h4>
+                        - GENERAR PROYECTOS REGIONALES DE INNOVACIÓN SOCIAL
+                      </h4>
+                      {/* <p>
                         - Validar problemáticas comunes entre actores Nodo País
                       </p>
                       <p>
@@ -110,15 +112,15 @@ export default class NetworkPage extends React.Component {
                       <p>
                         - Poner a prueba y evaluar las alternativas de solución
                       </p>
-                      <p>- Sistematizar el (los) proyecto (s) del Nodo País</p>
+                      <p>- Sistematizar el (los) proyecto (s) del Nodo País</p> */}
                     </div>
 
                     <div>
                       <h4>
-                        FOMENTAR Y PROMOVER BUENAS PRÁCTICAS DE INNOVACIÓN
+                        - FOMENTAR Y PROMOVER BUENAS PRÁCTICAS DE INNOVACIÓN
                         SOCIAL
                       </h4>
-                      <p>
+                      {/* <p>
                         - Generar espacios periódicos de socialización de los
                         proyectos de innovación de los Nodos País (eventual
                         anual ELIS)
@@ -131,32 +133,32 @@ export default class NetworkPage extends React.Component {
                       <p>
                         - Generar un repositorio de información que facilite la
                         implementación de proyectos.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                   <div
                     data-content='especificos'
-                    className='red__objetivos__text -text'
+                    className='red__objetivos__text -text objectives-section'
                   >
                     <p>
-                      1- Gestionar y aplicar conocimiento vinculado a la
+                      1. Gestionar y aplicar conocimiento vinculado a la
                       innovación social desde sector público, así como compartir
                       buenas prácticas, a través de un observatorio regional.
                     </p>
                     <p>
-                      2- Articular esfuerzos, fortalecer alianzas e intercambiar
+                      2. Articular esfuerzos, fortalecer alianzas e intercambiar
                       experiencias con el fin de co-crear mecanismos para
                       incentivar la innovación social desde sector público en
                       America latina.
                     </p>
                     <p>
-                      3- Facilitar la comunicación y difusión de fondos,
+                      3. Facilitar la comunicación y difusión de fondos,
                       herramientas, u otros recursos ya existentes a nivel
                       público o privado, destinados a promover la innovación
                       social
                     </p>
                     <p>
-                      4-Fomentar el desarrollo de proyectos colaborativos, así
+                      4. Fomentar el desarrollo de proyectos colaborativos, así
                       como el intercambio de experiencias y habilidades,
                       conectando problemas en común entre los miembros de la
                       red.
@@ -217,6 +219,107 @@ export default class NetworkPage extends React.Component {
                   requerimos para impulsar acciones que contribuyan a generar
                   valor para nuestras instituciones y las comunidades vinculadas
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className='row'>
+            <div className='col-24'>
+              <div className='red__valor__container'>
+                <h3 className='red__valor__title -title'>
+                  Participantes de la Red
+                </h3>
+                <div className='row'>
+                  <div className='col-8'>
+                    <ul className='list-group text-left subscribers'>
+                      <li className='list-group-item '>
+                        <div className='d-flex'>
+                          <h5 className='mb-0'>Nombre persona 1</h5>
+                        </div>
+                        <p className='d-flex mb-1'>Cargo</p>
+                        <small className='d-flex'>CHILE</small>
+                      </li>
+                      <li className='list-group-item '>
+                        <div className='d-flex'>
+                          <h5 className='mb-0'>Nombre persona 1</h5>
+                        </div>
+                        <p className='d-flex mb-1'>Cargo</p>
+                        <small className='d-flex'>CHILE</small>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className='col-8'>
+                    <ul className='list-group text-left subscribers'>
+                      <li className='list-group-item '>
+                        <div className='d-flex'>
+                          <h5 className='mb-0'>Nombre persona 1</h5>
+                        </div>
+                        <p className='d-flex mb-1'>Cargo</p>
+                        <small className='d-flex'>CHILE</small>
+                      </li>
+                      <li className='list-group-item '>
+                        <div className='d-flex'>
+                          <h5 className='mb-0'>Nombre persona 1</h5>
+                        </div>
+                        <p className='d-flex mb-1'>Cargo</p>
+                        <small className='d-flex'>CHILE</small>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className='col-8'>
+                    <ul className='list-group text-left subscribers'>
+                      <li className='list-group-item '>
+                        <div className='d-flex'>
+                          <h5 className='mb-0'>Nombre persona 1</h5>
+                        </div>
+                        <p className='d-flex mb-1'>Cargo</p>
+                        <small className='d-flex'>CHILE</small>
+                      </li>
+                      <li className='list-group-item '>
+                        <div className='d-flex'>
+                          <h5 className='mb-0'>Nombre persona 1</h5>
+                        </div>
+                        <p className='d-flex mb-1'>Cargo</p>
+                        <small className='d-flex'>CHILE</small>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col-24'>
+              <div className='red__valor__container'>
+                <h3 className='red__valor__title -title'>Únete a la Red</h3>
+                <form className='form-inline'>
+                  <div className='form-group'>
+                    <label className='sr-only' htmlFor='exampleInputEmail3'>
+                      Email address
+                    </label>
+                    <input
+                      type='email'
+                      className='form-control'
+                      id='exampleInputEmail3'
+                      placeholder='Email'
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <label className='sr-only' htmlFor='exampleInputPassword3'>
+                      Password
+                    </label>
+                    <input
+                      type='password'
+                      className='form-control'
+                      id='exampleInputPassword3'
+                      placeholder='Password'
+                    />
+                  </div>
+                  <button type='submit' className='btn btn-default'>
+                    Sign in
+                  </button>
+                </form>
               </div>
             </div>
           </div>

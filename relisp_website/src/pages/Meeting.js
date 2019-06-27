@@ -4,7 +4,7 @@ export default class NewsPage extends React.Component {
   render() {
     const timeline = [
       {
-        title: '23 de Junio',
+        title: '23 de Junio 2019',
         day: '23',
         activities: [
           {
@@ -34,7 +34,7 @@ export default class NewsPage extends React.Component {
         ]
       },
       {
-        title: '24 de Junio',
+        title: '24 de Junio 2019',
         day: '24',
         activities: [
           {
@@ -64,7 +64,7 @@ export default class NewsPage extends React.Component {
         ]
       },
       {
-        title: '25 de Junio',
+        title: '25 de Junio 2019',
         day: '25',
         activities: [
           {
@@ -293,8 +293,13 @@ export default class NewsPage extends React.Component {
         </section>
         <section className='encuentro__resena'>
           <div className='container'>
-            <div className='row'>
-              <div className='col-24 col-md-8 offset-md-2'>
+            <div className='row text-center'>
+              <img
+                src='/images/relis_cl.png'
+                width='50%'
+                className='center-img'
+              />
+              {/* <div className='col-24 col-md-8 offset-md-2'>
                 <h4 className='encuentro__resena__subtitle'>RESEÑA</h4>
                 <h3 className='encuentro__resena__title'>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -307,7 +312,7 @@ export default class NewsPage extends React.Component {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

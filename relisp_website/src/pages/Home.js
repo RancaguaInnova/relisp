@@ -1,6 +1,15 @@
 import React from 'react'
-
+import NewsCardComponent from '../components/NewsCard/index'
 export default class HomePage extends React.Component {
+  state = {
+    news: [],
+    loading: true,
+    error: ''
+  }
+
+  async componentDidMount() {
+    console.log('aca el did mount!!!')
+  }
   render() {
     return (
       <main className='home'>
@@ -86,55 +95,34 @@ export default class HomePage extends React.Component {
                 </div>
                 <div className='row'>
                   <div className='col-24 col-md-8'>
-                    <a href='#' className='home__news__new-container'>
-                      <div className='home__news__new-image'>
-                        <img src='/images/home/news-1.jpg' />
-                      </div>
-                      <div className='home__news__new-content'>
-                        <h4 className='home__news__new-subtitle'>elis 2019</h4>
-                        <h3 className='home__news__new-title'>
-                          Se abre convocatoria para postular a ELIS 2019
-                        </h3>
-                        <p className='home__news__new-text'>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </p>
-                      </div>
-                    </a>
+                    <NewsCardComponent
+                      data={{
+                        title: 'titulo',
+                        subtitle: 'subtitulo',
+                        text: 'asdasdasd',
+                        imageUrl: ''
+                      }}
+                    />
                   </div>
                   <div className='col-24 col-md-8'>
-                    <a href='#' className='home__news__new-container'>
-                      <div className='home__news__new-image'>
-                        <img src='/images/home/news-1.jpg' />
-                      </div>
-                      <div className='home__news__new-content'>
-                        <h4 className='home__news__new-subtitle'>elis 2019</h4>
-                        <h3 className='home__news__new-title'>
-                          Se abre convocatoria para postular a ELIS 2019
-                        </h3>
-                        <p className='home__news__new-text'>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </p>
-                      </div>
-                    </a>
+                    <NewsCardComponent
+                      data={{
+                        title: 'titulo',
+                        subtitle: 'subtitulo',
+                        text: 'asdasdasd',
+                        imageUrl: ''
+                      }}
+                    />
                   </div>
                   <div className='col-24 col-md-8'>
-                    <a href='#' className='home__news__new-container'>
-                      <div className='home__news__new-image'>
-                        <img src='/images/home/news-1.jpg' />
-                      </div>
-                      <div className='home__news__new-content'>
-                        <h4 className='home__news__new-subtitle'>elis 2018</h4>
-                        <h3 className='home__news__new-title'>
-                          Se realiza con éxito ELIS 2018
-                        </h3>
-                        <p className='home__news__new-text'>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </p>
-                      </div>
-                    </a>
+                    <NewsCardComponent
+                      data={{
+                        title: 'titulo',
+                        subtitle: 'subtitulo',
+                        text: 'asdasdasd',
+                        imageUrl: ''
+                      }}
+                    />
                   </div>
                   <div className='col-24 col-md-8 offset-md-8'>
                     <a href='/noticias' className='home__news__button'>

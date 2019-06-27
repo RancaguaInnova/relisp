@@ -11,7 +11,6 @@ export default class NewsCardComponent extends React.Component {
 
     const first = this.props.firts || false
     if (first) {
-      console.log('first', first)
       return (
         <div className='noticias__container__noticia-wrapper -main-new'>
           <div className='noticias__container__noticia-content -main-new'>
