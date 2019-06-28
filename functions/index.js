@@ -1,5 +1,7 @@
 const functions = require('firebase-functions')
 const admin = require('firebase-admin')
+const cors = require('cors')({ origin: true })
+
 admin.initializeApp()
 const db = admin.firestore()
 // // Create and Deploy Your First Cloud Functions
@@ -10,18 +12,56 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 })
 
 exports.news = functions.https.onRequest(async (request, response) => {
-  try {
-    const news = await db.collection('news').get()
-    console.log('NEWS', news)
-    response.json([
-      {
-        title: 'noticia 1',
-        subtitle: 'asdasdsad',
-        text: 'asdasdsa',
-        imageUrl: ''
-      }
-    ])
-  } catch (error) {
-    response.status(500).json({ error: 'Problems!' })
-  }
+  cors(request, response, async () => {
+    try {
+      const newsArr = []
+      const newsResult = await db.collection('News').get()
+      newsResult.forEach(news => {
+        // console.log('news!!!!', news.data())
+        newsArr.push(news.data())
+      })
+      /* console.log('NEWS', news) */
+      response.json(newsArr)
+    } catch (error) {
+      response.status(500).json({ error: 'Problems!' })
+    }
+  })
 })
+
+exports.suscriptions = functions.https.onRequest(async (request, response) => {
+  cors(request, response, async () => {
+    try {
+      const suscriptions = []
+      const suscriptionsResult = await db.collection('Subscriptions').get()
+      suscriptionsResult.forEach(news => {
+        suscriptions.push(news.data())
+      })
+      response.json(suscriptions)
+    } catch (error) {
+      response.status(500).json({ error: 'Problems!' })
+    }
+  })
+})
+
+exports.newsSuscription = functions.https.onRequest(
+  async (request, response) => {
+    cors(request, response, async () => {
+      try {
+        const subscription = {
+          name: request.body.name || '',
+          email: request.body.email || '',
+          country: request.body.country || '',
+          role: request.body.role || ''
+        }
+        await db
+          .collection('Subscriptions')
+          .doc()
+          .set(subscription)
+
+        response.json({ success: true })
+      } catch (error) {
+        response.status(500).json({ error: 'Problems!' })
+      }
+    })
+  }
+)

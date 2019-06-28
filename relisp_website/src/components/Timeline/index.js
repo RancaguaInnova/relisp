@@ -54,6 +54,7 @@ export default class TimelineComponent extends React.Component {
             <div className='col-24 col-md-12 offset-md-6'>
               {this.state.timeline.map((currentDay, index) => (
                 <div
+                  key={index}
                   data-schedule={currentDay.day}
                   className={`encuentro__programacion__group ${
                     this.state.current === index ? '-active' : ''

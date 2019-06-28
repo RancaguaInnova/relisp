@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-
+import { list } from '../helpers/news'
 import NewsCardComponent from './../components/NewsCard'
 
 export default class NewsPage extends React.Component {
@@ -10,7 +10,10 @@ export default class NewsPage extends React.Component {
   }
 
   state = {
-    newsLimit: 4
+    newsLimit: 4,
+    news: [],
+    loading: false,
+    error: ''
   }
 
   setNewsLimit() {
@@ -20,61 +23,30 @@ export default class NewsPage extends React.Component {
     })
   }
 
+  async componentDidMount() {
+    try {
+      const state = this.state
+      state.loading = true
+      this.setState(state)
+      const newsList = await list()
+      state.news = newsList || []
+      state.loading = false
+      this.setState(state)
+    } catch (error) {
+      this.setState({
+        newsLimit: 4,
+        news: [],
+        loading: false,
+        error: 'Problemas al obtener las noticias'
+      })
+    }
+  }
+
   render() {
-    const news = [
-      {
-        title: 'Se abre la convocatoria para postular a ELIS 2019',
-        subtitle: 'Aca el subtitulo',
-        text: 'Aca el contenido de la noticia',
-        imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-I1E3u2-Y9Hac5Z0yLlA1U3N6EG27wEI8rfpyiG5b1lA8wsnkyg',
-        date: moment()
-      },
-      {
-        title: 'Se abre la convocatoria para postular a ELIS 2019',
-        subtitle: 'Aca el subtitulo',
-        text: 'Aca el contenido de la noticia',
-        imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-I1E3u2-Y9Hac5Z0yLlA1U3N6EG27wEI8rfpyiG5b1lA8wsnkyg',
-        date: moment()
-      },
-      {
-        title: 'Se abre la convocatoria para postular a ELIS 2019',
-        subtitle: 'Aca el subtitulo',
-        text: 'Aca el contenido de la noticia',
-        imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-I1E3u2-Y9Hac5Z0yLlA1U3N6EG27wEI8rfpyiG5b1lA8wsnkyg',
-        date: moment()
-      },
-      {
-        title: 'Se abre la convocatoria para postular a ELIS 2019',
-        subtitle: 'Aca el subtitulo',
-        text: 'Aca el contenido de la noticia',
-        imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-I1E3u2-Y9Hac5Z0yLlA1U3N6EG27wEI8rfpyiG5b1lA8wsnkyg',
-        date: moment()
-      },
-      {
-        title: 'Se abre la convocatoria para postular a ELIS 2019',
-        subtitle: 'Aca el subtitulo',
-        text: 'Aca el contenido de la noticia',
-        imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-I1E3u2-Y9Hac5Z0yLlA1U3N6EG27wEI8rfpyiG5b1lA8wsnkyg',
-        date: moment()
-      },
-      {
-        title: 'Se abre la convocatoria para postular a ELIS 2019',
-        subtitle: 'Aca el subtitulo',
-        text: 'Aca el contenido de la noticia',
-        imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-I1E3u2-Y9Hac5Z0yLlA1U3N6EG27wEI8rfpyiG5b1lA8wsnkyg',
-        date: moment()
-      }
-    ]
+    const news = this.state.news || []
 
     const lastNews = news && news.length > 0 ? news.pop() : null
     const limit = this.state.newsLimit
-    console.log('lastNews', lastNews)
     return (
       <main className='noticias'>
         <section className='noticias__hero'>

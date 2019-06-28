@@ -1,16 +1,33 @@
 import React from 'react'
 import NewsCardComponent from '../components/NewsCard/index'
+import { list } from '../helpers/news'
 export default class HomePage extends React.Component {
   state = {
     news: [],
-    loading: true,
+    loading: false,
     error: ''
   }
 
   async componentDidMount() {
-    console.log('aca el did mount!!!')
+    try {
+      const state = this.state
+      state.loading = true
+      this.setState(state)
+      const newsList = await list()
+      state.news = newsList || []
+      state.loading = false
+      this.setState(state)
+    } catch (error) {
+      this.setState({
+        news: [],
+        loading: false,
+        error: 'Problemas al obtener las noticias'
+      })
+    }
   }
   render() {
+    console.log('this.state', this.state)
+    const newsList = this.state.news || []
     return (
       <main className='home'>
         <section className='home__hero'>
@@ -94,42 +111,26 @@ export default class HomePage extends React.Component {
                   </div>
                 </div>
                 <div className='row'>
-                  <div className='col-24 col-md-8'>
-                    <NewsCardComponent
-                      data={{
-                        title: 'titulo',
-                        subtitle: 'subtitulo',
-                        text: 'asdasdasd',
-                        imageUrl: ''
-                      }}
-                    />
-                  </div>
-                  <div className='col-24 col-md-8'>
-                    <NewsCardComponent
-                      data={{
-                        title: 'titulo',
-                        subtitle: 'subtitulo',
-                        text: 'asdasdasd',
-                        imageUrl: ''
-                      }}
-                    />
-                  </div>
-                  <div className='col-24 col-md-8'>
-                    <NewsCardComponent
-                      data={{
-                        title: 'titulo',
-                        subtitle: 'subtitulo',
-                        text: 'asdasdasd',
-                        imageUrl: ''
-                      }}
-                    />
-                  </div>
-                  <div className='col-24 col-md-8 offset-md-8'>
-                    <a href='/noticias' className='home__news__button'>
-                      <p>Ver más noticias</p>
-                      <span />
-                    </a>
-                  </div>
+                  {newsList.map((news, index) => {
+                    return index < 3 ? (
+                      <div className='col-24 col-md-8' key={index}>
+                        <NewsCardComponent data={news} />
+                      </div>
+                    ) : (
+                      <div key={index} />
+                    )
+                  })}
+
+                  {newsList.length > 3 ? (
+                    <div className='col-24 col-md-8 offset-md-8'>
+                      <a href='/noticias' className='home__news__button'>
+                        <p>Ver más noticias</p>
+                        <span />
+                      </a>
+                    </div>
+                  ) : (
+                    <div />
+                  )}
                 </div>
               </div>
             </div>

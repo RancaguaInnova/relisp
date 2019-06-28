@@ -296,28 +296,46 @@ export default class NetworkPage extends React.Component {
                 <form className='form-inline'>
                   <div className='form-group'>
                     <label className='sr-only' htmlFor='exampleInputEmail3'>
-                      Email address
+                      Nombre
                     </label>
                     <input
-                      type='email'
+                      type='text'
                       className='form-control'
-                      id='exampleInputEmail3'
-                      placeholder='Email'
+                      placeholder='Nombre'
                     />
                   </div>
                   <div className='form-group'>
                     <label className='sr-only' htmlFor='exampleInputPassword3'>
-                      Password
+                      Cargo
                     </label>
                     <input
-                      type='password'
+                      type='text'
                       className='form-control'
-                      id='exampleInputPassword3'
-                      placeholder='Password'
+                      placeholder='Cargo'
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <label className='sr-only' htmlFor='exampleInputEmail3'>
+                      País
+                    </label>
+                    <input
+                      type='text'
+                      className='form-control'
+                      placeholder='País'
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <label className='sr-only' htmlFor='exampleInputPassword3'>
+                      Email
+                    </label>
+                    <input
+                      type='email'
+                      className='form-control'
+                      placeholder='Email'
                     />
                   </div>
                   <button type='submit' className='btn btn-default'>
-                    Sign in
+                    Suscribir
                   </button>
                 </form>
               </div>

@@ -37,21 +37,24 @@ export default class FooterComponent extends React.Component {
                       &copy; Desarrollo e innovación Rancagua
                     </p>
                     <ul className='footer__social'>
-                      <li className='footer__item'>
-                        <a>
+                      {/* <li className='footer__item'>
+                        <a href='' target='_blank'>
                           <i className='fa fa-facebook' />
                         </a>
-                      </li>
+                      </li> */}
                       <li className='footer__item'>
-                        <a>
+                        <a
+                          href='http://twitter.com/RancaguaInnova/'
+                          target='_blank'
+                        >
                           <i className='fa fa-twitter' />
                         </a>
                       </li>
-                      <li className='footer__item'>
-                        <a>
+                      {/*  <li className='footer__item'>
+                        <a href='' target='_blank'>
                           <i className='fa fa-linkedin' />
                         </a>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>

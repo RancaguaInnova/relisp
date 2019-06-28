@@ -7,6 +7,7 @@ import FooterComponent from './components/Footer'
 
 import HomePage from './pages/Home'
 import NewsPage from './pages/News'
+import EventPage from './pages/Event'
 import MeetingPage from './pages/Meeting'
 import NetworkPage from './pages/Network'
 
@@ -16,6 +17,7 @@ function App() {
       <HeaderComponent />
       <Router>
         <Route path='/' exact component={HomePage} />
+        <Route path='/chile-19' exact component={EventPage} />
         <Route path='/noticias' exact component={NewsPage} />
         <Route path='/encuentro' exact component={MeetingPage} />
         <Route path='/red' exact component={NetworkPage} />
