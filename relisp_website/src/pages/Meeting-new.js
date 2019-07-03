@@ -1,5 +1,5 @@
 import React from 'react'
-import TimelineComponent from './../components/Timeline'
+import TimelineComponent from '../components/Timeline'
 export default class NewsPage extends React.Component {
   render() {
     const timeline = [
@@ -121,7 +121,7 @@ export default class NewsPage extends React.Component {
             </div>
           </div>
         </section>
-        <section className='encuentro__encuentros'>
+        <section class="encuentro__encuentros">
           <div class="container">
             <div class="row">
               <div class="col-24 col-md-20 offset-md-2">
@@ -139,108 +139,63 @@ export default class NewsPage extends React.Component {
                           <p>Bogotá</p>
                         </div>
                       </div>
-                      <p class="encuentro__encuentros__slide-text">
-                        Entre el 2 y 4 diciembre se desarrolló en Bogotá, Colombia, el primer encuentro
-                        Latinoamericano de Innovación Social en el Sector Público que buscó crear un
-                        espacio de diálogo y de construcción participativa entre actores del sector
-                        público de toda la región, que estén generando conocimiento y soluciones de alto
-                        impacto para mejorar la calidad de vida de la población en situación de
-                        vulnerabilidad. El evento fue dirigido principalmente a ejecutores de política
-                        pública, académicos, entidades privadas, organizaciones de la sociedad civil y
-                        estudiantes de carreras afines. Una contribución a la creación de un espacio de
-                        diálogo donde CAF -banco de desarrollo de América Latina- promueve la innovación
-                        social a través de la articulación de actores, el intercambio y la difusión de
-                        experiencias y aprendizajes con miras a aportar nuevas ideas a necesidades
-                        sociales no resueltas.
-                      </p>
+                      <p class="encuentro__encuentros__slide-text">Buscó crear un espacio de diálogo y de construcción participativa entre actores del sector público de toda la región, que estén generando conocimiento y soluciones de alto umpacto para mejorar la calidad de vida de la población en situación de vulnerabilidad. El evento fue dirigido principalmente a ejecutores de política pública, académicos, entidades privadas, organizacipnes de la sociedad civil y estudiantes de carreras afines. Una contribución a la creación de un espacio de diálogo donde CAF banco de desarrollo de América Latina promueve la innovación social a través de la articulación de actores, el intercambio u la difusión de experiencias y aprendizajes con miras a aportar nuevas ideas a necesidades sociales no resueltas.</p>
                     </div>
-                    <div class="encuentro__encuentros__slide-image"><img src="/images/red/co.png" /></div>
+                    <div class="encuentro__encuentros__slide-image"><img src="/images/encuentro/slide.jpg" /></div>
                   </div>
                 </div>
                 <div class="encuentro__encuentros__slide">
                   <div class="encuentro__encuentros__slide-container">
                     <div class="encuentro__encuentros__slide-content">
-                      <h4 class="encuentro__encuentros__slide-subtitle">SEGUNDA VERSIÓN</h4>
-                      <h3 class="encuentro__encuentros__slide-title">Costa Rica 2016</h3>
+                      <h4 class="encuentro__encuentros__slide-subtitle">PRIMERA VERSIÓN</h4>
+                      <h3 class="encuentro__encuentros__slide-title">Colombia 2015</h3>
                       <div class="encuentro__encuentros__slide-wrapper">
                         <div class="encuentro__encuentros__slide-date"><i class="fa fa-calendar"></i>
-                          <p>23 - 25 Noviembre</p>
+                          <p>2 - 4 Diciembre</p>
                         </div>
                         <div class="encuentro__encuentros__slide-location"><i class="fa fa-map-marker"></i>
-                          <p>San José</p>
+                          <p>Bogotá</p>
                         </div>
                       </div>
-                      <p class="encuentro__encuentros__slide-text">
-                        Del 23 al 25 de noviembre se llevó a cabo el II Encuentro Latinoamericano de
-                        Innovación Social desde el Sector Público (ELIS) en San José de Costa Rica. La
-                        segunda edición de este encuentro regional estuvo dirigida a impulsar el
-                        conocimiento sobre el emprendimiento social para el desarrollo local,
-                        sostenibilidad ambiental, inversión de impacto y participación ciudadana como
-                        dinamizadores de la innovación social. Este evento es promovido por los
-                        gobiernos de la región para generar espacios de confluencia, reflexión y
-                        aprendizaje sobre experiencias que están impulsando cambios sociales en nuestra
-                        región y el mundo. En ELIS 2016 se darán cita actores de los sectores público y
-                        privado, emprendedores, organizaciones sociales, académicos y expertos, quienes
-                        disertarán en torno a cuatro áreas temáticas: Emprendimiento social como
-                        herramienta para el desarrollo local; Intervenciones locales para generar
-                        ciudades inclusivas y ambientalmente sostenibles; Inversión de impacto como
-                        mecanismo de impulso a la innovación social y Participación ciudadana.
-                      </p>
+                      <p class="encuentro__encuentros__slide-text">Buscó crear un espacio de diálogo y de construcción participativa entre actores del sector público de toda la región, que estén generando conocimiento y soluciones de alto umpacto para mejorar la calidad de vida de la población en situación de vulnerabilidad. El evento fue dirigido principalmente a ejecutores de política pública, académicos, entidades privadas, organizacipnes de la sociedad civil y estudiantes de carreras afines. Una contribución a la creación de un espacio de diálogo donde CAF banco de desarrollo de América Latina promueve la innovación social a través de la articulación de actores, el intercambio u la difusión de experiencias y aprendizajes con miras a aportar nuevas ideas a necesidades sociales no resueltas.</p>
                     </div>
-                    <div class="encuentro__encuentros__slide-image"><img src="/images/red/cr.png" /></div>
+                    <div class="encuentro__encuentros__slide-image"><img src="/images/encuentro/slide.jpg" /></div>
                   </div>
                 </div>
                 <div class="encuentro__encuentros__slide">
                   <div class="encuentro__encuentros__slide-container">
                     <div class="encuentro__encuentros__slide-content">
-                      <h4 class="encuentro__encuentros__slide-subtitle">TERCERA VERSIÓN</h4>
-                      <h3 class="encuentro__encuentros__slide-title">México 2017</h3>
+                      <h4 class="encuentro__encuentros__slide-subtitle">PRIMERA VERSIÓN</h4>
+                      <h3 class="encuentro__encuentros__slide-title">Colombia 2015</h3>
                       <div class="encuentro__encuentros__slide-wrapper">
                         <div class="encuentro__encuentros__slide-date"><i class="fa fa-calendar"></i>
-                          <p>31 Octubre - 4 Noviembre</p>
+                          <p>2 - 4 Diciembre</p>
                         </div>
                         <div class="encuentro__encuentros__slide-location"><i class="fa fa-map-marker"></i>
-                          <p>Guadalajara</p>
+                          <p>Bogotá</p>
                         </div>
                       </div>
-                      <p class="encuentro__encuentros__slide-text">
-                        El tercer encuentro Latinoamericano de Innovación Social desde/con el Sector
-                        Público (ELIS) 2017 sucedió en el marco del Festival de Innovación Epicentro,
-                        del 31 de octubre al 4 de noviembre. Investigaciones y prácticas de innovación
-                        social desde, o en colaboración con, el servicio público de 9 países de América
-                        Latina, se expondrán para que las y los asistentes de Gobierno, Academia, OSCs y
-                        público interesado intercambien experiencias y generen oportunidades de
-                        colaboración. El evento fue abierto y gratuito, pero en donde era necesario
-                        (obligatorio) registrarse a partir del 27 de septiembre.
-                      </p>
+                      <p class="encuentro__encuentros__slide-text">Buscó crear un espacio de diálogo y de construcción participativa entre actores del sector público de toda la región, que estén generando conocimiento y soluciones de alto umpacto para mejorar la calidad de vida de la población en situación de vulnerabilidad. El evento fue dirigido principalmente a ejecutores de política pública, académicos, entidades privadas, organizacipnes de la sociedad civil y estudiantes de carreras afines. Una contribución a la creación de un espacio de diálogo donde CAF banco de desarrollo de América Latina promueve la innovación social a través de la articulación de actores, el intercambio u la difusión de experiencias y aprendizajes con miras a aportar nuevas ideas a necesidades sociales no resueltas.</p>
                     </div>
-                    <div class="encuentro__encuentros__slide-image"><img src="/images/red/mx.png" /></div>
+                    <div class="encuentro__encuentros__slide-image"><img src="/images/encuentro/slide.jpg" /></div>
                   </div>
                 </div>
                 <div class="encuentro__encuentros__slide">
                   <div class="encuentro__encuentros__slide-container">
                     <div class="encuentro__encuentros__slide-content">
-                      <h4 class="encuentro__encuentros__slide-subtitle">CUARTA VERSIÓN</h4>
-                      <h3 class="encuentro__encuentros__slide-title">Brazil 2018</h3>
+                      <h4 class="encuentro__encuentros__slide-subtitle">PRIMERA VERSIÓN</h4>
+                      <h3 class="encuentro__encuentros__slide-title">Colombia 2015</h3>
                       <div class="encuentro__encuentros__slide-wrapper">
                         <div class="encuentro__encuentros__slide-date"><i class="fa fa-calendar"></i>
-                          <p>29 - 30 Agosto</p>
+                          <p>2 - 4 Diciembre</p>
                         </div>
                         <div class="encuentro__encuentros__slide-location"><i class="fa fa-map-marker"></i>
-                          <p>Florianópolis</p>
+                          <p>Bogotá</p>
                         </div>
                       </div>
-                      <p class="encuentro__encuentros__slide-text" style={{ paddingBottom: 20 }}>
-                        ELIS 2018 tiene el objetivo de crear un espacio de diálogo y de construcción
-                        participativa, sin divisiones, entre el Gobierno, la Academia, Sector Privado y
-                        Organizaciones de la Sociedad Civil que estén generando conocimiento y soluciones
-                        de innovación social de alto impacto para las diferentes problemáticas
-                        latinoamericanas. ¡El evento no termina cuando termina! El ELIS forma parte de un
-                        movimiento mucho mayor: una red latinoamericana de innovadores sociales a partir
-                        del sector público.
-                      </p>
+                      <p class="encuentro__encuentros__slide-text">Buscó crear un espacio de diálogo y de construcción participativa entre actores del sector público de toda la región, que estén generando conocimiento y soluciones de alto umpacto para mejorar la calidad de vida de la población en situación de vulnerabilidad. El evento fue dirigido principalmente a ejecutores de política pública, académicos, entidades privadas, organizacipnes de la sociedad civil y estudiantes de carreras afines. Una contribución a la creación de un espacio de diálogo donde CAF banco de desarrollo de América Latina promueve la innovación social a través de la articulación de actores, el intercambio u la difusión de experiencias y aprendizajes con miras a aportar nuevas ideas a necesidades sociales no resueltas.</p>
                     </div>
-                    <div class="encuentro__encuentros__slide-image"><img src="/images/red/br.png" /></div>
+                    <div class="encuentro__encuentros__slide-image"><img src="/images/encuentro/slide.jpg" /></div>
                   </div>
                 </div>
               </div>

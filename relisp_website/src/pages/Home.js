@@ -70,13 +70,13 @@ export default class HomePage extends React.Component {
                 <div className='home__about__container'>
                   <h3 className='home__about__subtitle'>elis 2019</h3>
                   <h2 className='home__about__title'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor ames.
+                  ELIS Y LA INNOVACIÓN SOCIAL
                   </h2>
                   <p className='home__about__text'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam.
+                  El Encuentro Latinoamericano de Innovación Social desde el Sector Público,
+                  busca crear un espacio de diálogo y de construcción participativa entre
+                  actores del sector público, privado y la academia de toda la región, que
+                  estén generando conocimiento y soluciones de alto impacto.
                   </p>
                   <a
                     href='/encuentro#programacion'

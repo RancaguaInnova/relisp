@@ -228,7 +228,7 @@ export default class NetworkPage extends React.Component {
             <div className='col-24'>
               <div className='red__valor__container'>
                 <h3 className='red__valor__title -title'>
-                  Participantes de la Red
+                  Coordinadores de la Red
                 </h3>
                 <div className='row'>
                   <div className='col-8'>
