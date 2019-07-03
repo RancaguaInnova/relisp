@@ -125,7 +125,7 @@ export default class NewsPage extends React.Component {
           <div class="container">
             <div class="row">
               <div class="col-24 col-md-20 offset-md-2">
-                <h2 class="encuentro__encuentros__title">Encuentros anteriores</h2>
+                <h2 class="encuentro__encuentros__title" style={{ color: "#eee" }}>Encuentros anteriores</h2>
                 <div class="encuentro__encuentros__slide">
                   <div class="encuentro__encuentros__slide-container">
                     <div class="encuentro__encuentros__slide-content">
@@ -203,7 +203,7 @@ export default class NewsPage extends React.Component {
                           <p>Guadalajara</p>
                         </div>
                       </div>
-                      <p class="encuentro__encuentros__slide-text">
+                      <p class="encuentro__encuentros__slide-text" style={{ paddingBottom: 40 }}>
                         El tercer encuentro Latinoamericano de Innovación Social desde/con el Sector
                         Público (ELIS) 2017 sucedió en el marco del Festival de Innovación Epicentro,
                         del 31 de octubre al 4 de noviembre. Investigaciones y prácticas de innovación
@@ -230,7 +230,7 @@ export default class NewsPage extends React.Component {
                           <p>Florianópolis</p>
                         </div>
                       </div>
-                      <p class="encuentro__encuentros__slide-text" style={{ paddingBottom: 20 }}>
+                      <p class="encuentro__encuentros__slide-text" style={{ paddingBottom: 40 }}>
                         ELIS 2018 tiene el objetivo de crear un espacio de diálogo y de construcción
                         participativa, sin divisiones, entre el Gobierno, la Academia, Sector Privado y
                         Organizaciones de la Sociedad Civil que estén generando conocimiento y soluciones
