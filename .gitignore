@@ -53,6 +53,7 @@ relisp_website/build/
 relisp_admin/build/
 relisp_website/public/
 relisp_admin/public/
+relist/public/*
 # Optional npm cache directory
 .npm
 
