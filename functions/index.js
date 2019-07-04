@@ -48,12 +48,12 @@ exports.newsSuscription = functions.https.onRequest(
           name: name || '',
           email: email || '',
           country: country || '',
-          role: position || ''
+          role: position || 'Coordinador'
         }
         await db
           .collection('Subscriptions')
           .doc()
-          .add(subscription)
+          .set(subscription)
 
         response.json({ success: true })
       } catch (error) {
