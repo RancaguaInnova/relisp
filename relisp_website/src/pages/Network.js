@@ -1,6 +1,64 @@
 import React from 'react'
+import { list, add } from '../helpers/subscriptions'
+import isEmpty from 'lodash/isEmpty'
 
 export default class NetworkPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      subscriptionsList: null,
+      newSubscription: null,
+    }
+  }
+
+  componentDidMount = async () => {
+    if (!this.state.subscriptionsList) {
+      try {
+        const subscriptionsList = await list()
+
+        if (!isEmpty(subscriptionsList)) {
+          this.setState({ subscriptionsList })
+        }
+      } catch (error) {
+        console.log('Error getting subscriptions list:', error)
+      }
+    }
+  }
+
+  handleChange = evt => {
+    const { name, value } = evt.target
+    const subscription = Object.assign({}, this.state.newSubscription)
+    subscription[name] = value
+    this.setState({ newSubscription: subscription })
+  }
+
+  handleSubmit = async evt => {
+    evt.preventDefault()
+
+    try {
+      const response = await add(this.state.newSubscription)
+    } catch (error) {
+      console.log('Error adding subscription:', error)
+    }
+  }
+
+  renderNetwork = () => {
+    const { subscriptionsList } = this.state
+    if (subscriptionsList) {
+      return subscriptionsList.map((subscription, i) => {
+        return (
+          <li className='list-group-item' key={i}>
+            <div className='d-flex'>
+              <h5 className='mb-0'>{subscription.name}</h5>
+            </div>
+            <p className='d-flex mb-1'>{subscription.position}</p>
+            <small className='d-flex'>{subscription.country}</small>
+          </li>
+        )
+      })
+    }
+  }
+
   render() {
     return (
       <main className='red'>
@@ -223,7 +281,7 @@ export default class NetworkPage extends React.Component {
             </div>
           </div>
         </section>
-        <section>
+        <section style={{ paddingLeft: 15, paddingRight: 15 }}>
           <div className='row'>
             <div className='col-24'>
               <div className='red__valor__container'>
@@ -231,7 +289,12 @@ export default class NetworkPage extends React.Component {
                   Coordinadores de la Red
                 </h3>
                 <div className='row'>
-                  <div className='col-8'>
+                  <div className='col-xs-12 col-md-8'>
+                    <ul className='list-group text-left subscribers'>
+                      { this.renderNetwork() }
+                    </ul>
+                  </div>
+                  <div className='col-xs-12 col-md-8'>
                     <ul className='list-group text-left subscribers'>
                       <li className='list-group-item '>
                         <div className='d-flex'>
@@ -249,25 +312,7 @@ export default class NetworkPage extends React.Component {
                       </li>
                     </ul>
                   </div>
-                  <div className='col-8'>
-                    <ul className='list-group text-left subscribers'>
-                      <li className='list-group-item '>
-                        <div className='d-flex'>
-                          <h5 className='mb-0'>Nombre persona 1</h5>
-                        </div>
-                        <p className='d-flex mb-1'>Cargo</p>
-                        <small className='d-flex'>CHILE</small>
-                      </li>
-                      <li className='list-group-item '>
-                        <div className='d-flex'>
-                          <h5 className='mb-0'>Nombre persona 1</h5>
-                        </div>
-                        <p className='d-flex mb-1'>Cargo</p>
-                        <small className='d-flex'>CHILE</small>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className='col-8'>
+                  <div className='col-xs-12 col-md-8'>
                     <ul className='list-group text-left subscribers'>
                       <li className='list-group-item '>
                         <div className='d-flex'>
@@ -299,6 +344,8 @@ export default class NetworkPage extends React.Component {
                       Nombre
                     </label>
                     <input
+                      onChange={ this.handleChange }
+                      name="name"
                       type='text'
                       className='form-control'
                       placeholder='Nombre'
@@ -310,8 +357,10 @@ export default class NetworkPage extends React.Component {
                     </label>
                     <input
                       type='text'
+                      name="position"
                       className='form-control'
                       placeholder='Cargo'
+                      onChange={ this.handleChange }
                     />
                   </div>
                   <div className='form-group'>
@@ -320,8 +369,10 @@ export default class NetworkPage extends React.Component {
                     </label>
                     <input
                       type='text'
+                      name="country"
                       className='form-control'
                       placeholder='País'
+                      onChange={ this.handleChange }
                     />
                   </div>
                   <div className='form-group'>
@@ -330,11 +381,13 @@ export default class NetworkPage extends React.Component {
                     </label>
                     <input
                       type='email'
+                      name="email"
                       className='form-control'
                       placeholder='Email'
+                      onChange={ this.handleChange }
                     />
                   </div>
-                  <button type='submit' className='btn btn-default'>
+                  <button type='submit' className='btn btn-default' onClick={ this.handleSubmit }>
                     Suscribir
                   </button>
                 </form>

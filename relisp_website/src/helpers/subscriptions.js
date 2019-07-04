@@ -1,7 +1,7 @@
 export const list = async () => {
   try {
     const response = await fetch(
-      'http://localhost:5000/elis-ae942/us-central1/suscriptions'
+      'http://localhost:5001/elis-ae942/us-central1/suscriptions'
     )
     const subscriptionsArr = await response.json()
     return subscriptionsArr
@@ -13,7 +13,7 @@ export const list = async () => {
 export const add = async data => {
   try {
     const response = await fetch(
-      'http://localhost:5000/elis-ae942/us-central1/newsSuscription',
+      'http://localhost:5001/elis-ae942/us-central1/newsSuscription',
       {
         method: 'POST',
         body: JSON.stringify(data),

@@ -6,10 +6,6 @@ admin.initializeApp()
 const db = admin.firestore()
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  response.send('Hello from Firebase!')
-})
 
 exports.news = functions.https.onRequest(async (request, response) => {
   cors(request, response, async () => {
@@ -17,13 +13,12 @@ exports.news = functions.https.onRequest(async (request, response) => {
       const newsArr = []
       const newsResult = await db.collection('News').get()
       newsResult.forEach(news => {
-        // console.log('news!!!!', news.data())
         newsArr.push(news.data())
       })
       /* console.log('NEWS', news) */
       response.json(newsArr)
     } catch (error) {
-      response.status(500).json({ error: 'Problems!' })
+      response.status(500).json({ error: `Problem: ${error}` })
     }
   })
 })
@@ -38,7 +33,7 @@ exports.suscriptions = functions.https.onRequest(async (request, response) => {
       })
       response.json(suscriptions)
     } catch (error) {
-      response.status(500).json({ error: 'Problems!' })
+      response.status(500).json({ error: `Problem: ${error}` })
     }
   })
 })
@@ -46,21 +41,23 @@ exports.suscriptions = functions.https.onRequest(async (request, response) => {
 exports.newsSuscription = functions.https.onRequest(
   async (request, response) => {
     cors(request, response, async () => {
+      const { name, email, country, position } = request.body
+
       try {
         const subscription = {
-          name: request.body.name || '',
-          email: request.body.email || '',
-          country: request.body.country || '',
-          role: request.body.role || ''
+          name: name || '',
+          email: email || '',
+          country: country || '',
+          role: position || ''
         }
         await db
           .collection('Subscriptions')
           .doc()
-          .set(subscription)
+          .add(subscription)
 
         response.json({ success: true })
       } catch (error) {
-        response.status(500).json({ error: 'Problems!' })
+        response.status(500).json({ error: `Problem: ${error}` })
       }
     })
   }
