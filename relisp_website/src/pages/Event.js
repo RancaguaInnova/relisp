@@ -4,37 +4,7 @@ export default class EventPage extends React.Component {
   render() {
     const timeline = [
       {
-        title: '23 de Junio 2019',
-        day: '23',
-        activities: [
-          {
-            hour: '09:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '10:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '11:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '12:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          }
-        ]
-      },
-      {
-        title: '24 de Junio 2019',
+        title: '24 de Octubre 2019',
         day: '24',
         activities: [
           {
@@ -64,8 +34,38 @@ export default class EventPage extends React.Component {
         ]
       },
       {
-        title: '25 de Junio 2019',
+        title: '25 de Octubre 2019',
         day: '25',
+        activities: [
+          {
+            hour: '09:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '10:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '11:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '12:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          }
+        ]
+      },
+      {
+        title: '26 de Octubre 2019',
+        day: '26',
         activities: [
           {
             hour: '09:00 Hrs',
@@ -103,6 +103,7 @@ export default class EventPage extends React.Component {
                 src='/images/relis_cl.png'
                 width='100%'
                 className='center-img'
+                alt="elis-logo"
               />
             </div>
           </div>
@@ -117,16 +118,19 @@ export default class EventPage extends React.Component {
               allowFullScreen
               data-content='municipal'
               className='-active'
+              title="map1"
             />
             <iframe
               src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.2764558374106!2d-70.7444634847265!3d-34.16484884191605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966343149faedeb1%3A0xe3229c417a6941eb!2sUOH!5e0!3m2!1ses-419!2scl!4v1561480388549!5m2!1ses-419!2scl'
               allowFullScreen
               data-content='uoh'
+              title="map2"
             />
             <iframe
               src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.870160888052!2d-70.7429440842473!3d-34.175237142460574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96634338aac3c365%3A0x7b3d6b132ce00f9a!2sAv.+Capit%C3%A1n+Antonio+Mill%C3%A1n+342%2C+Rancagua%2C+Regi%C3%B3n+del+Libertador+Gral.+Bernardo+O%E2%80%99Higgins%2C+Chile!5e0!3m2!1ses-419!2sar!4v1560428608566!5m2!1ses-419!2sar'
               allowFullScreen
               data-content='regional'
+              title="map3"
             />
           </div>
           <div className='encuentro__ubicacion__locations'>
@@ -162,7 +166,7 @@ export default class EventPage extends React.Component {
         </section>
         <section className='encuentro__formularios'>
           <div className='encuentro__formularios__ripped-background'>
-            <img src='/images/encuentro/ripped-bottom-white.png' />
+            <img src='/images/encuentro/ripped-bottom-white.png' alt="" />
           </div>
           <div className='container'>
             <div className='row'>

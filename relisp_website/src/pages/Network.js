@@ -289,45 +289,9 @@ export default class NetworkPage extends React.Component {
                   Coordinadores de la Red
                 </h3>
                 <div className='row'>
-                  <div className='col-xs-12 col-md-8'>
+                  <div className='col-xs-24 col-md-8 col-md-offset-4' style={{ textAlign: "center", margin: "auto" }}>
                     <ul className='list-group text-left subscribers'>
                       { this.renderNetwork() }
-                    </ul>
-                  </div>
-                  <div className='col-xs-12 col-md-8'>
-                    <ul className='list-group text-left subscribers'>
-                      <li className='list-group-item '>
-                        <div className='d-flex'>
-                          <h5 className='mb-0'>Nombre persona 1</h5>
-                        </div>
-                        <p className='d-flex mb-1'>Cargo</p>
-                        <small className='d-flex'>CHILE</small>
-                      </li>
-                      <li className='list-group-item '>
-                        <div className='d-flex'>
-                          <h5 className='mb-0'>Nombre persona 1</h5>
-                        </div>
-                        <p className='d-flex mb-1'>Cargo</p>
-                        <small className='d-flex'>CHILE</small>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className='col-xs-12 col-md-8'>
-                    <ul className='list-group text-left subscribers'>
-                      <li className='list-group-item '>
-                        <div className='d-flex'>
-                          <h5 className='mb-0'>Nombre persona 1</h5>
-                        </div>
-                        <p className='d-flex mb-1'>Cargo</p>
-                        <small className='d-flex'>CHILE</small>
-                      </li>
-                      <li className='list-group-item '>
-                        <div className='d-flex'>
-                          <h5 className='mb-0'>Nombre persona 1</h5>
-                        </div>
-                        <p className='d-flex mb-1'>Cargo</p>
-                        <small className='d-flex'>CHILE</small>
-                      </li>
                     </ul>
                   </div>
                 </div>
@@ -387,7 +351,7 @@ export default class NetworkPage extends React.Component {
                       onChange={ this.handleChange }
                     />
                   </div>
-                  <button type='submit' className='btn btn-default' onClick={ this.handleSubmit }>
+                  <button type='submit' className='btn btn-default' onClick={ this.handleSubmit } style={{ marginLeft: 10 }}>
                     Suscribir
                   </button>
                 </form>

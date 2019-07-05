@@ -4,37 +4,7 @@ export default class NewsPage extends React.Component {
   render() {
     const timeline = [
       {
-        title: '23 de Junio 2019',
-        day: '23',
-        activities: [
-          {
-            hour: '09:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '10:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '11:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '12:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          }
-        ]
-      },
-      {
-        title: '24 de Junio 2019',
+        title: '24 de Octubre 2019',
         day: '24',
         activities: [
           {
@@ -64,8 +34,38 @@ export default class NewsPage extends React.Component {
         ]
       },
       {
-        title: '25 de Junio 2019',
+        title: '25 de Octubre 2019',
         day: '25',
+        activities: [
+          {
+            hour: '09:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '10:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '11:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '12:00 Hrs',
+            title: 'Lorem ipsum dolor consectetur sit amet.',
+            address: '',
+            imageUrl: ''
+          }
+        ]
+      },
+      {
+        title: '26 de Octubre 2019',
+        day: '26',
         activities: [
           {
             hour: '09:00 Hrs',
