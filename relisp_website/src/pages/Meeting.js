@@ -221,7 +221,7 @@ export default class NewsPage extends React.Component {
                   <div class="encuentro__encuentros__slide-container">
                     <div class="encuentro__encuentros__slide-content">
                       <h4 class="encuentro__encuentros__slide-subtitle">CUARTA VERSIÓN</h4>
-                      <h3 class="encuentro__encuentros__slide-title">Brazil 2018</h3>
+                      <h3 class="encuentro__encuentros__slide-title">Brasil 2018</h3>
                       <div class="encuentro__encuentros__slide-wrapper">
                         <div class="encuentro__encuentros__slide-date"><i class="fa fa-calendar"></i>
                           <p>29 - 30 Agosto</p>

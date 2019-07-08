@@ -136,7 +136,7 @@ export default class NetworkPage extends React.Component {
                       data-target='especificos'
                       className='red__objetivos__tab'
                     >
-                      ESPECIFICOS
+                      ESPECÍFICOS
                     </p>
                   </div>
                   <div
@@ -207,13 +207,13 @@ export default class NetworkPage extends React.Component {
                       2. Articular esfuerzos, fortalecer alianzas e intercambiar
                       experiencias con el fin de co-crear mecanismos para
                       incentivar la innovación social desde sector público en
-                      America latina.
+                      América latina.
                     </p>
                     <p>
                       3. Facilitar la comunicación y difusión de fondos,
                       herramientas, u otros recursos ya existentes a nivel
                       público o privado, destinados a promover la innovación
-                      social
+                      social.
                     </p>
                     <p>
                       4. Fomentar el desarrollo de proyectos colaborativos, así

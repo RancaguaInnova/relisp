@@ -26,7 +26,6 @@ export default class HomePage extends React.Component {
     }
   }
   render() {
-    console.log('this.state', this.state)
     const newsList = this.state.news || []
     return (
       <main className='home'>
@@ -39,13 +38,13 @@ export default class HomePage extends React.Component {
                     Encuentro Latinoamericano de Innovación Social 2019
                   </h2>
                   <div className='home__hero__satellite'>
-                    <img src='/images/home/hero-satellite.png' />
+                    <img src='/images/home/hero-satellite.png' alt="satelite" />
                   </div>
                   <div className='home__hero__bird'>
-                    <img src='/images/home/hero-bird.png' />
+                    <img src='/images/home/hero-bird.png' alt="ave" />
                   </div>
                   <div className='home__hero__landscape'>
-                    <img src='/images/home/hero-landscape.png' />
+                    <img src='/images/home/hero-landscape.png' alt="paisaje"/>
                   </div>
                 </div>
               </div>

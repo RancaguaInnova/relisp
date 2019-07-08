@@ -9,28 +9,40 @@ export default class EventPage extends React.Component {
         activities: [
           {
             hour: '09:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
           },
           {
             hour: '10:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '11:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
           },
           {
             hour: '12:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
-          }
+          },
+          {
+            hour: '14:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '16:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '18:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
         ]
       },
       {
@@ -39,28 +51,40 @@ export default class EventPage extends React.Component {
         activities: [
           {
             hour: '09:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
           },
           {
             hour: '10:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '11:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
           },
           {
             hour: '12:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
-          }
+          },
+          {
+            hour: '14:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '16:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '18:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
         ]
       },
       {
@@ -69,28 +93,40 @@ export default class EventPage extends React.Component {
         activities: [
           {
             hour: '09:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
           },
           {
             hour: '10:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
-            address: '',
-            imageUrl: ''
-          },
-          {
-            hour: '11:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
           },
           {
             hour: '12:00 Hrs',
-            title: 'Lorem ipsum dolor consectetur sit amet.',
+            title: '',
             address: '',
             imageUrl: ''
-          }
+          },
+          {
+            hour: '14:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '16:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
+          {
+            hour: '18:00 Hrs',
+            title: '',
+            address: '',
+            imageUrl: ''
+          },
         ]
       }
     ]

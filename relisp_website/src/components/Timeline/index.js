@@ -1,14 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class TimelineComponent extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.setCurrent = this.setCurrent.bind(this)
+    this.state = { current: 0, timeline: [] }
   }
-  state = { current: 0, timeline: [] }
+
+  static propTypes = {
+    timeline: PropTypes.arrayOf(PropTypes.object)
+  }
 
   setCurrent(index) {
-    console.log('index', index)
     const state = this.state
     state.current = index
     this.setState(state)
@@ -24,7 +28,7 @@ export default class TimelineComponent extends React.Component {
     return (
       <section id='programacion' className='encuentro__programacion'>
         <div className='encuentro__programacion__ripped-background'>
-          <img src='/images/red/ripped-top.png' />
+          <img src='/images/red/ripped-top.png' alt="top" />
         </div>
         <div className='container'>
           <div className='row justify-content-center'>
@@ -41,10 +45,10 @@ export default class TimelineComponent extends React.Component {
                   } `}
                 >
                   <h4 className='encuentro__programacion__subtitle'>
-                    PROGRAMACION
+                    PROGRAMACIÓN
                   </h4>
                   <h3 className='encuentro__programacion__title'>
-                    {currentDay.title}
+                    { currentDay.title}
                   </h3>
                 </div>
               </div>
@@ -68,7 +72,7 @@ export default class TimelineComponent extends React.Component {
                       <div className='encuentro__programacion__content-group -left'>
                         {currentActivity.imageUrl !== '' && idx % 2 === 0 ? (
                           <div className='encuentro__programacion__image encuentro__programacion__image--left'>
-                            <img src={currentActivity.imageUrl} />
+                            <img src={currentActivity.imageUrl} alt="actividad" />
                           </div>
                         ) : (
                           <div />
@@ -89,7 +93,7 @@ export default class TimelineComponent extends React.Component {
                       <div className='encuentro__programacion__content-group encuentro__programacion__content-group--left -right'>
                         {currentActivity.imageUrl !== '' && idx % 2 !== 0 ? (
                           <div className='encuentro__programacion__image'>
-                            <img src={currentActivity.imageUrl} />
+                            <img src={currentActivity.imageUrl} alt="actividad" />
                           </div>
                         ) : (
                           <div />

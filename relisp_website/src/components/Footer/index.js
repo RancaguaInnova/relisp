@@ -17,7 +17,7 @@ export default class FooterComponent extends React.Component {
                     </div>
                     <div className='footer__wrapper'>
                       <p className='footer__text'>
-                        Alcazar #530, Rancagua, Chile
+                        Alcázar #530, Rancagua, Chile
                       </p>
                     </div>
                     <div className='footer__wrapper'>
