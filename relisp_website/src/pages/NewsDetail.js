@@ -14,13 +14,14 @@ export default class NewsDetail extends React.Component {
   }
 
   static propTypes = {
-    id: PropTypes.string.isRequired
+    match: PropTypes.object.isRequired
   }
 
   async componentDidMount() {
     this.setState({ loading: true })
     try {
-      const news = await get()
+      const news = await get(this.props.match.params.id)
+      console.log('news:', news)
       this.setState({ news, loading: false })
     } catch (error) {
       this.setState({
@@ -32,6 +33,7 @@ export default class NewsDetail extends React.Component {
   }
 
   render() {
+    if (this.state.loading) return <div />
     const { title, subtitle, body, imageUrl, date } = this.state.news
     return (
       <main className="nota">
@@ -54,8 +56,10 @@ export default class NewsDetail extends React.Component {
           </div>
           <div className="container-fluid nota__image">
             <div className="row nopadding">
-              <div className="col-24 col-sm-19">
-                <div className="nota__image__wrapper"><img src={ imageUrl } alt="foto-noticia" /></div>
+              <div className="col-sm-19 col-md-20 offset-md-2">
+                <div className="nota__image__wrapper">
+                  <img src={ imageUrl } alt="foto-noticia" />
+                </div>
               </div>
             </div>
           </div>

@@ -22,7 +22,7 @@ function App() {
         <Route path='/noticias' exact component={NewsPage} />
         <Route path='/encuentro' exact component={MeetingPage} />
         <Route path='/red' exact component={NetworkPage} />
-        <Route path='/noticias/:newsId' exact component={NewsDetail} />
+        <Route path='/noticias/:id' exact component={NewsDetail} />
       </Router>
       <FooterComponent />
     </div>

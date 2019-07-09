@@ -15,7 +15,6 @@ exports.news = functions.https.onRequest(async (request, response) => {
       newsResult.forEach(news => {
         const newsObj = news.data()
         newsObj.id = news.id
-        // console.log('news!!!!', news.data())
         newsArr.push(newsObj)
       })
       response.json(newsArr)
@@ -31,7 +30,6 @@ exports.getNews = functions.https.onRequest(async (request, response) => {
       const newsRef = await db.doc(`/News/${request.body.id}`)
       const newsSnap = await newsRef.get()
       const data = newsSnap.data()
-      console.log('DATA:', data)
       response.json(data)
     } catch(error) {
           response.status(500).json({ error: `Problem getting news: ${error}` })
@@ -49,7 +47,7 @@ exports.suscriptions = functions.https.onRequest(async (request, response) => {
       })
       response.json(suscriptions)
     } catch (error) {
-      response.status(500).json({ error: `Problem: ${error}` })
+      response.status(500).json({ error: `Problem on get subscriptions: ${error}` })
     }
   })
 })
@@ -73,7 +71,7 @@ exports.newsSuscription = functions.https.onRequest(
 
         response.json({ success: true })
       } catch (error) {
-        response.status(500).json({ error: `Problem: ${error}` })
+        response.status(500).json({ error: `Problem on create subscription: ${error}` })
       }
     })
   }

@@ -33,7 +33,8 @@ export const get = async id => {
       }
     )
     const news = await response.json()
-    return news
+    const parsedNews = { ...news, imageUrl: news.picture && news.picture.length > 0 ? news.picture[0].src : '' }
+    return parsedNews
   } catch(error) {
     console.log(`Error geting news with id ${id}: ${error.message}`)
   }

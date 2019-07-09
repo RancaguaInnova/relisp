@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class NewsCardComponent extends React.Component {
 
@@ -10,10 +11,10 @@ export default class NewsCardComponent extends React.Component {
           className='noticias__container__noticia-text'
         >
           <div className='col-24 col-md-20 offset-md-2' style={{ marginTop: 20 }}>
-            <a href={`/noticias/${id}`} className='home__news__button'>
+            <Link to={`/noticias/${id}`} className='home__news__button'>
               <p>Ver detalle</p>
               <span />
-            </a>
+            </Link>
           </div>
         </div>
       )
