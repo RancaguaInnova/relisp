@@ -3,14 +3,14 @@ import React from 'react'
 export default class NewsCardComponent extends React.Component {
 
   renderNewsBody = () => {
-    const { minimal, data: { text, title } } = this.props
+    const { minimal, data: { text, title, id } } = this.props
     if (minimal) {
       return (
         <div
           className='noticias__container__noticia-text'
         >
           <div className='col-24 col-md-20 offset-md-2' style={{ marginTop: 20 }}>
-            <a href={`/noticias#${title}`} className='home__news__button'>
+            <a href={`/noticias/${id}`} className='home__news__button'>
               <p>Ver detalle</p>
               <span />
             </a>
@@ -31,7 +31,7 @@ export default class NewsCardComponent extends React.Component {
     const { data: { title, imageUrl }, first } = this.props
 
     return (
-      <div className='noticias__container__noticia-wrapper' id={ title }>
+      <div className='noticias__container__noticia-wrapper'>
         <div
           className='noticias__container__noticia-image'
         >

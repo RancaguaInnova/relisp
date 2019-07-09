@@ -1,51 +1,70 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { get } from '../helpers/news'
 
 export default class NewsDetail extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { news: {
+      title: '',
+      subtitle: '',
+      body: '',
+      imageUrl: ''
+    }}
+  }
 
   static propTypes = {
-    news: PropTypes.shape({
-      title: PropTypes.string,
-      subtitle: PropTypes.string,
-      body: PropTypes.string,
-      imageUrl: PropTypes.string,
-    })
+    id: PropTypes.string.isRequired
+  }
+
+  async componentDidMount() {
+    this.setState({ loading: true })
+    try {
+      const news = await get()
+      this.setState({ news, loading: false })
+    } catch (error) {
+      this.setState({
+        news: null,
+        loading: false,
+        error: `Problemas al obtener la noticia: ${error.message}`
+      })
+    }
   }
 
   render() {
-    const { title, subtitle, body, imageUrl, date } = this.props.news
+    const { title, subtitle, body, imageUrl, date } = this.state.news
     return (
-      <main class="nota">
-        <section class="nota__heading">
-          <div class="container">
-            <div class="row">
-              <div class="col-24 col-md-20 offset-md-2">
-                <h1 class="nota__heading__title">{ title }</h1>
-                <div class="nota__heading__info">
-                  <div class="nota__heading__date"><span>{ date || '' }</span></div>
-                  <div class="nota__heading__share">
-                    <span><i class="fa fa-share-alt"></i></span>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-envelope-o"></i></a>
+      <main className="nota">
+        <section className="nota__heading">
+          <div className="container">
+            <div className="row">
+              <div className="col-24 col-md-20 offset-md-2">
+                <h1 className="nota__heading__title">{ title }</h1>
+                <div className="nota__heading__info">
+                  <div className="nota__heading__date"><span>{ date || '' }</span></div>
+                  <div className="nota__heading__share">
+                    <span><i className="fa fa-share-alt"></i></span>
+                    <a href="#"><i className="fa fa-facebook"></i></a>
+                    <a href="#"><i className="fa fa-twitter"></i></a>
+                    <a href="#"><i className="fa fa-envelope-o"></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="container-fluid nota__image">
-            <div class="row nopadding">
-              <div class="col-24 col-sm-19">
-                <div class="nota__image__wrapper"><img src={ imageUrl } alt="foto-noticia" /></div>
+          <div className="container-fluid nota__image">
+            <div className="row nopadding">
+              <div className="col-24 col-sm-19">
+                <div className="nota__image__wrapper"><img src={ imageUrl } alt="foto-noticia" /></div>
               </div>
             </div>
           </div>
         </section>
-        <section class="nota__body">
-          <div class="container">
-            <div class="row">
+        <section className="nota__body">
+          <div className="container">
+            <div className="row">
               <div
-                class="col-24 col-md-20 offset-md-2"
+                className="col-24 col-md-20 offset-md-2"
                 dangerouslySetInnerHTML={{ __html: body }}
               />
             </div>

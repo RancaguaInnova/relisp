@@ -4,21 +4,37 @@ export const list = async () => {
       'https://us-central1-elis-ae942.cloudfunctions.net/news'
     )
     const newsArr = await response.json()
-    console.log('NEWS ARRAY:', newsArr)
-
     const data = newsArr.map(news =>({
+        id: news.id,
         title: news.title,
         subtitle: news.subtitle,
         text: news.body,
         imageUrl: news.picture && news.picture.length > 0 ? news.picture[0].src : ''
       }))
 
-    console.log('DATA:', data);
-
     return data
   } catch (error) {
     console.log('Error getting news:', error)
-
     return []
+  }
+}
+
+export const get = async id => {
+  try {
+    const response = await fetch(
+      'https://us-central1-elis-ae942.cloudfunctions.net/getNews',
+      {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id })
+      }
+    )
+    const news = await response.json()
+    return news
+  } catch(error) {
+    console.log(`Error geting news with id ${id}: ${error.message}`)
   }
 }

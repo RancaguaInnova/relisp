@@ -17,7 +17,21 @@ exports.news = functions.https.onRequest(async (request, response) => {
       })
       response.json(newsArr)
     } catch (error) {
-      response.status(500).json({ error: `Problem: ${error}` })
+      response.status(500).json({ error: `Problem getting news list: ${error}` })
+    }
+  })
+})
+
+exports.getNews = functions.https.onRequest(async (request, response) => {
+  cors(request, response, async () => {
+    try {
+      const newsRef = await db.doc(`/News/${request.body.id}`)
+      const newsSnap = await newsRef.get()
+      const data = newsSnap.data()
+      console.log('DATA:', data)
+      response.json(data)
+    } catch(error) {
+          response.status(500).json({ error: `Problem getting news: ${error}` })
     }
   })
 })
