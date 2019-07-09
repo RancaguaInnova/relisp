@@ -16156,15 +16156,22 @@ button._button {
 }
 
 .home__news__title {
-  font-size: 32px;
-  text-align: right;
-  color: #fff;
+  font-size: 42px;
+  text-align: left;
+  color: #600e44;
   margin-bottom: 40px;
 }
 
 @media (min-width: 992px) {
   .home__news__title {
     margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home__news__title {
+    color: #fff !important;
+    text-align: center;
   }
 }
 
@@ -17531,6 +17538,7 @@ button._button {
 
 .noticias__container__noticia-text.-main-new {
   color: #fff;
+  width: 100%;
 }
 
 @media (min-width: 992px) {

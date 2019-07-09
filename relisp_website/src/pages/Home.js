@@ -10,18 +10,14 @@ export default class HomePage extends React.Component {
 
   async componentDidMount() {
     try {
-      const state = this.state
-      state.loading = true
-      this.setState(state)
+      this.setState({ loading: true })
       const newsList = await list()
-      state.news = newsList || []
-      state.loading = false
-      this.setState(state)
+      this.setState({ loading: false, news: newsList || [] })
     } catch (error) {
       this.setState({
         news: [],
         loading: false,
-        error: 'Problemas al obtener las noticias'
+        error: `Problemas al obtener las noticias: ${error.message}`
       })
     }
   }
@@ -78,10 +74,11 @@ export default class HomePage extends React.Component {
                   estén generando conocimiento y soluciones de alto impacto.
                   </p>
                   <a
-                    href='/encuentro#programacion'
+                    href='https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/Bases%20ELIS%20FINAL.pdf?alt=media&token=7b3018d8-2a9a-4b6b-8008-c61b39801f07'
                     className='home__about__button'
+                    target="_blank"
                   >
-                    <p>Ver Cronograma </p>
+                    <p>Ver Bases </p>
                   </a>
                   <br />
                   <br /> <br />
@@ -93,19 +90,22 @@ export default class HomePage extends React.Component {
           </div>
           <div className='home__about__image'>
             <div className='home__about__wrapper'>
-              <img src='/images/home/about.jpg' />
+              <img src='/images/home/about.jpg' alt="" />
             </div>
           </div>
         </section>
         <section className='home__news'>
-          <div className='home__news__ripped-background'>
-            <img src='/images/red/ripped-top.png' />
-          </div>
+
           <div className='container'>
+            <div className="row" >
+              <div className='col-24 col-md-20 offset-md-2 home__news__ripped-background'>
+                <img src='/images/red/ripped-top.png' alt="logo" />
+              </div>
+            </div>
             <div className='row'>
               <div className='col-24 col-md-20 offset-md-2'>
                 <div className='row'>
-                  <div className='col-24 col-md-8 offset-md-16'>
+                  <div className='col-24 col-md-8'>
                     <h2 className='home__news__title'>Últimas noticias</h2>
                   </div>
                 </div>
@@ -113,11 +113,9 @@ export default class HomePage extends React.Component {
                   {newsList.map((news, index) => {
                     return index < 3 ? (
                       <div className='col-24 col-md-8' key={index}>
-                        <NewsCardComponent data={news} />
+                        <NewsCardComponent data={news} minimal />
                       </div>
-                    ) : (
-                      <div key={index} />
-                    )
+                    ) : null
                   })}
 
                   {newsList.length > 3 ? (

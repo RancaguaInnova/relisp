@@ -15,6 +15,7 @@ const firebaseConfig = {
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
 }
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -25,6 +26,7 @@ const theme = createMuiTheme({
     }
   }
 })
+
 const messages = {
   es: spanishMessages
 }

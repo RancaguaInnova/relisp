@@ -15,7 +15,6 @@ exports.news = functions.https.onRequest(async (request, response) => {
       newsResult.forEach(news => {
         newsArr.push(news.data())
       })
-      /* console.log('NEWS', news) */
       response.json(newsArr)
     } catch (error) {
       response.status(500).json({ error: `Problem: ${error}` })

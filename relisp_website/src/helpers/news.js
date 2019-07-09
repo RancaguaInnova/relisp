@@ -1,21 +1,24 @@
 export const list = async () => {
   try {
     const response = await fetch(
-      'http://localhost:5000/elis-ae942/us-central1/news'
+      'https://us-central1-elis-ae942.cloudfunctions.net/news'
     )
     const newsArr = await response.json()
-    const data = newsArr.map(news => {
-      return {
+    console.log('NEWS ARRAY:', newsArr)
+
+    const data = newsArr.map(news =>({
         title: news.title,
         subtitle: news.subtitle,
         text: news.body,
-        imageUrl:
-          news.picture && news.picture.length > 0 ? news.picture[0].src : ''
-      }
-    })
+        imageUrl: news.picture && news.picture.length > 0 ? news.picture[0].src : ''
+      }))
+
+    console.log('DATA:', data);
 
     return data
   } catch (error) {
+    console.log('Error getting news:', error)
+
     return []
   }
 }

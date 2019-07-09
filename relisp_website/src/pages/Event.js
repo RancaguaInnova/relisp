@@ -207,7 +207,7 @@ export default class EventPage extends React.Component {
           <div className='container'>
             <div className='row'>
               <div className='col-24 col-md-20 offset-md-2'>
-                <div className='encuentro__formularios__wrapper'>
+                <div className='encuentro__formularios__wrapper' id="convocatoria">
                   <a
                     href='https://forms.gle/qKuHUipxTRg9R4y29'
                     target='_blank'
