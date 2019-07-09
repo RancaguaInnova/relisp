@@ -10,23 +10,18 @@ export default class HomePage extends React.Component {
 
   async componentDidMount() {
     try {
-      const state = this.state
-      state.loading = true
-      this.setState(state)
+      this.setState({ loading: true })
       const newsList = await list()
-      state.news = newsList || []
-      state.loading = false
-      this.setState(state)
+      this.setState({ loading: false, news: newsList || [] })
     } catch (error) {
       this.setState({
         news: [],
         loading: false,
-        error: 'Problemas al obtener las noticias'
+        error: `Problemas al obtener las noticias: ${error.message}`
       })
     }
   }
   render() {
-    console.log('this.state', this.state)
     const newsList = this.state.news || []
     return (
       <main className='home'>
@@ -39,13 +34,13 @@ export default class HomePage extends React.Component {
                     Encuentro Latinoamericano de Innovación Social 2019
                   </h2>
                   <div className='home__hero__satellite'>
-                    <img src='/images/home/hero-satellite.png' />
+                    <img src='/images/home/hero-satellite.png' alt="satelite" />
                   </div>
                   <div className='home__hero__bird'>
-                    <img src='/images/home/hero-bird.png' />
+                    <img src='/images/home/hero-bird.png' alt="ave" />
                   </div>
                   <div className='home__hero__landscape'>
-                    <img src='/images/home/hero-landscape.png' />
+                    <img src='/images/home/hero-landscape.png' alt="paisaje"/>
                   </div>
                 </div>
               </div>
@@ -70,19 +65,20 @@ export default class HomePage extends React.Component {
                 <div className='home__about__container'>
                   <h3 className='home__about__subtitle'>elis 2019</h3>
                   <h2 className='home__about__title'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor ames.
+                  ELIS Y LA INNOVACIÓN SOCIAL
                   </h2>
                   <p className='home__about__text'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam.
+                  El Encuentro Latinoamericano de Innovación Social desde el Sector Público,
+                  busca crear un espacio de diálogo y de construcción participativa entre
+                  actores del sector público, privado y la academia de toda la región, que
+                  estén generando conocimiento y soluciones de alto impacto.
                   </p>
                   <a
-                    href='/encuentro#programacion'
+                    href='https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/Bases%20ELIS%20FINAL.pdf?alt=media&token=7b3018d8-2a9a-4b6b-8008-c61b39801f07'
                     className='home__about__button'
+                    target="_blank"
                   >
-                    <p>Ver Cronograma </p>
+                    <p>Ver Bases </p>
                   </a>
                   <br />
                   <br /> <br />
@@ -94,19 +90,22 @@ export default class HomePage extends React.Component {
           </div>
           <div className='home__about__image'>
             <div className='home__about__wrapper'>
-              <img src='/images/home/about.jpg' />
+              <img src='/images/home/about.jpg' alt="" />
             </div>
           </div>
         </section>
         <section className='home__news'>
-          <div className='home__news__ripped-background'>
-            <img src='/images/red/ripped-top.png' />
-          </div>
+
           <div className='container'>
+            <div className="row" >
+              <div className='col-24 col-md-20 offset-md-2 home__news__ripped-background'>
+                <img src='/images/red/ripped-top.png' alt="logo" />
+              </div>
+            </div>
             <div className='row'>
               <div className='col-24 col-md-20 offset-md-2'>
                 <div className='row'>
-                  <div className='col-24 col-md-8 offset-md-16'>
+                  <div className='col-24 col-md-8'>
                     <h2 className='home__news__title'>Últimas noticias</h2>
                   </div>
                 </div>
@@ -114,11 +113,9 @@ export default class HomePage extends React.Component {
                   {newsList.map((news, index) => {
                     return index < 3 ? (
                       <div className='col-24 col-md-8' key={index}>
-                        <NewsCardComponent data={news} />
+                        <NewsCardComponent data={news} minimal />
                       </div>
-                    ) : (
-                      <div key={index} />
-                    )
+                    ) : null
                   })}
 
                   {newsList.length > 3 ? (

@@ -23,7 +23,7 @@ export default class HeaderComponent extends React.Component {
                       <a href='/red'>La Red</a>
                     </li>
                     <li className='header__item'>
-                      <a href='/encuentro'>Encuentros</a>
+                      <a href='/encuentro'>Elis</a>
                     </li>
                     <li className='header__item'>
                       <a href='/noticias'>Noticias</a>

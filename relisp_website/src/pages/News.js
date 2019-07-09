@@ -1,20 +1,20 @@
 import React from 'react'
-import moment from 'moment'
 import { list } from '../helpers/news'
 import NewsCardComponent from './../components/NewsCard'
 
 export default class NewsPage extends React.Component {
   constructor(props, context) {
     super(props, context)
+    this.state = {
+      newsLimit: 4,
+      news: [],
+      loading: false,
+      error: ''
+    }
+
     this.setNewsLimit = this.setNewsLimit.bind(this)
   }
 
-  state = {
-    newsLimit: 4,
-    news: [],
-    loading: false,
-    error: ''
-  }
 
   setNewsLimit() {
     const limit = this.state.newsLimit === 0 ? 4 : 0
@@ -24,29 +24,40 @@ export default class NewsPage extends React.Component {
   }
 
   async componentDidMount() {
+    this.setState({ loading: true })
     try {
-      const state = this.state
-      state.loading = true
-      this.setState(state)
       const newsList = await list()
-      state.news = newsList || []
-      state.loading = false
-      this.setState(state)
+      this.setState({ news: newsList, loading: false })
     } catch (error) {
       this.setState({
         newsLimit: 4,
         news: [],
         loading: false,
-        error: 'Problemas al obtener las noticias'
+        error: `Problemas al obtener las noticias: ${error.message}`
       })
     }
   }
 
-  render() {
-    const news = this.state.news || []
+  renderNews = () => {
+    const { news, newsLimit } = this.state || []
 
+    return news.map((current, index) => {
+      if (newsLimit === 4 && index < 3) {
+        return (
+          <div className='col-24 col-md-8' key={index}>
+            <NewsCardComponent data={current} key={index} minimal />
+          </div>
+        )
+      } else {
+        return <div key={index} />
+      }
+    })
+  }
+
+  render() {
+    const { news, newsLimit } = this.state || []
     const lastNews = news && news.length > 0 ? news.pop() : null
-    const limit = this.state.newsLimit
+
     return (
       <main className='noticias'>
         <section className='noticias__hero'>
@@ -60,7 +71,7 @@ export default class NewsPage extends React.Component {
         </section>
         <section className='noticias__container'>
           <div className='noticias__container__ripped-background'>
-            <img src='/images/red/ripped-top.png' />
+            <img src='/images/red/ripped-top.png' alt="ripped-top" />
           </div>
           <div className='container'>
             <div className='row'>
@@ -68,55 +79,25 @@ export default class NewsPage extends React.Component {
                 <div className='row'>
                   {lastNews ? (
                     <div className='col-24'>
-                      {/* <NewsCardComponent data={lastNews} first={true} /> */}
-                      <div className='noticias__container__noticia-wrapper -main-new'>
-                        <div className='noticias__container__noticia-content -main-new'>
-                          <div className='noticias__container__noticia-subtitle'>
-                            {lastNews.subtitle}
-                          </div>
-                          <h2 className='noticias__container__noticia-title -main-new'>
-                            {lastNews.title}
-                          </h2>
-                          <div className='noticias__container__noticia-text -main-new'>
-                            {lastNews.text}
-                          </div>
-                        </div>
-                        <div className='noticias__container__noticia-image -main-new'>
-                          <img
-                            src='/images/home/news-1.jpg'
-                            className='-main-new'
-                          />
-                        </div>
-                      </div>
+                      <NewsCardComponent data={lastNews} />
                     </div>
                   ) : (
                     <div />
                   )}
 
-                  {news.map((current, index) => {
-                    {
-                      return (this.state.newsLimit === 4 && index < 3) ||
-                        this.state.newsLimit === 0 ? (
-                        <div className='col-24 col-md-8' key={index}>
-                          <NewsCardComponent data={current} key={index} />
-                        </div>
-                      ) : (
-                        <div key={index} />
-                      )
-                    }
-                  })}
+                  { this.renderNews() }
 
-                  {news.length > 4 ? (
+                  {news.length > newsLimit ? (
                     <div className='col-24 col-md-8 offset-md-8'>
                       <button
                         className='noticias__container__more-button'
                         onClick={this.setNewsLimit}
                       >
-                        <p>{limit === 0 ? 'Ver menos' : 'Ver más'}</p>
+                        <p>{newsLimit === 0 ? 'Ver menos' : 'Ver más'}</p>
                       </button>
                     </div>
                   ) : (
-                    <div />
+                    <div style={{ marginTop: 200 }}/>
                   )}
                 </div>
               </div>

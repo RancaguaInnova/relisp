@@ -1,3 +1,3 @@
-#!/bin/bash  
+#!/bin/bash
 
-firebase deploy --only hosting
+firebase -P elis-ae942 deploy --only hosting

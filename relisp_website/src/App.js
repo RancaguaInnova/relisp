@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import './App.css'
 import HeaderComponent from './components/Header'
@@ -10,6 +10,7 @@ import NewsPage from './pages/News'
 import EventPage from './pages/Event'
 import MeetingPage from './pages/Meeting'
 import NetworkPage from './pages/Network'
+import NewsDetail from './pages/NewsDetail'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/noticias' exact component={NewsPage} />
         <Route path='/encuentro' exact component={MeetingPage} />
         <Route path='/red' exact component={NetworkPage} />
+        <Route path='/noticias/:newsId' exact component={NewsDetail} />
       </Router>
       <FooterComponent />
     </div>

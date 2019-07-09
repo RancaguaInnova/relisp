@@ -51,6 +51,10 @@ relisp_admin/node_modules/
 #relisp_website/node_modules/
 relisp_website/build/
 relisp_admin/build/
+relisp_website/public/
+relisp_admin/public/
+public/
+relisp/public/
 # Optional npm cache directory
 .npm
 
