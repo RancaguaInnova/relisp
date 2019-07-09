@@ -17,8 +17,10 @@ exports.news = functions.https.onRequest(async (request, response) => {
       const newsArr = []
       const newsResult = await db.collection('News').get()
       newsResult.forEach(news => {
+        const newsObj = news.data()
+        newsObj.id = news.id
         // console.log('news!!!!', news.data())
-        newsArr.push(news.data())
+        newsArr.push(newsObj)
       })
       /* console.log('NEWS', news) */
       response.json(newsArr)
