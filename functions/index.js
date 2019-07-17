@@ -42,8 +42,8 @@ exports.suscriptions = functions.https.onRequest(async (request, response) => {
     try {
       const suscriptions = []
       const suscriptionsResult = await db.collection('Subscriptions').get()
-      suscriptionsResult.forEach(news => {
-        suscriptions.push(news.data())
+      suscriptionsResult.forEach(subscription => {
+        suscriptions.push(subscription.data())
       })
       response.json(suscriptions)
     } catch (error) {

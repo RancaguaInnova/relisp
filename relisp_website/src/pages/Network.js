@@ -1,11 +1,14 @@
 import React from 'react'
 import { list, add } from '../helpers/subscriptions'
 import isEmpty from 'lodash/isEmpty'
+import sortBy from 'lodash/sortBy'
+import remove from 'lodash/remove'
 
 export default class NetworkPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      director: null,
       subscriptionsList: null,
       newSubscription: null,
     }
@@ -14,10 +17,12 @@ export default class NetworkPage extends React.Component {
   componentDidMount = async () => {
     if (!this.state.subscriptionsList) {
       try {
-        const subscriptionsList = await list()
+        let subscriptionsList = await list()
+        subscriptionsList = sortBy(subscriptionsList, ['name'])
+        const director = remove(subscriptionsList, { role: 'Director' })[0]
 
         if (!isEmpty(subscriptionsList)) {
-          this.setState({ subscriptionsList })
+          this.setState({ subscriptionsList, director })
         }
       } catch (error) {
         console.log('Error getting subscriptions list:', error)
@@ -39,6 +44,21 @@ export default class NetworkPage extends React.Component {
       const response = await add(this.state.newSubscription)
     } catch (error) {
       console.log('Error adding subscription:', error)
+    }
+  }
+
+  renderDirector = () => {
+    const { director } = this.state
+    if (director) {
+      return (
+        <li className='list-group-item' key={'director'}>
+          <div className='d-flex'>
+            <h5 className='mb-0'>{director.name}</h5>
+          </div>
+          <p className='d-flex mb-1'>{director.position || director.role}</p>
+          <small className='d-flex'>{director.country}</small>
+        </li>
+      )
     }
   }
 
@@ -291,6 +311,7 @@ export default class NetworkPage extends React.Component {
                 <div className='row'>
                   <div className='col-xs-24 col-md-8 col-md-offset-4' style={{ textAlign: "center", margin: "auto" }}>
                     <ul className='list-group text-left subscribers'>
+                      { this.renderDirector() }
                       { this.renderNetwork() }
                     </ul>
                   </div>
