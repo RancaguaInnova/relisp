@@ -46,7 +46,7 @@ export default class HomePage extends React.Component {
               </div>
               <div className='col-24 col-md-8 offset-md-14'>
                 <a
-                  href='/encuentro#programacion'
+                  href='/chile-19#programacion'
                   className='home__hero__button'
                 >
                   <i className='material-icons'>assignment_turned_in</i>

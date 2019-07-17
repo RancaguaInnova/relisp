@@ -51,7 +51,7 @@ export default class NetworkPage extends React.Component {
             <div className='d-flex'>
               <h5 className='mb-0'>{subscription.name}</h5>
             </div>
-            <p className='d-flex mb-1'>{subscription.position}</p>
+            <p className='d-flex mb-1'>{subscription.position || subscription.role}</p>
             <small className='d-flex'>{subscription.country}</small>
           </li>
         )

@@ -1,5 +1,6 @@
 import React from 'react'
 import TimelineComponent from './../components/Timeline'
+
 export default class NewsPage extends React.Component {
   render() {
     const timeline = [
