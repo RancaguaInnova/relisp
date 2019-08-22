@@ -63,6 +63,7 @@ export const NewsCreate = props => (
     </SimpleForm>
   </Create>
 )
+
 export const NewsEdit = props => (
   <Edit {...props} label='Noticias' title='Noticias'>
     <SimpleForm validate={validateUserCreation}>

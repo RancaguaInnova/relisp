@@ -75,7 +75,7 @@ export default class HomePage extends React.Component {
                     conocimiento y soluciones de alto impacto.
                   </p>
                   <a
-                    href='https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/Bases_relis_v4.pdf?alt=media&token=5a4b667d-1cc5-4075-88f7-9c8fa1e164a1'
+                    href='https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/Portada%20Bases%20ELIS-fusionado.pdf?alt=media&token=4176b97f-7734-47de-8d98-1064a5a8a411'
                     className='home__about__button'
                     target='_blank'
                     onClick={() => {
