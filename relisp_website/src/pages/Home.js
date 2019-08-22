@@ -1,6 +1,8 @@
 import React from 'react'
 import NewsCardComponent from '../components/NewsCard/index'
 import { list } from '../helpers/news'
+import ReactGA from '../helpers/analytics'
+
 export default class HomePage extends React.Component {
   state = {
     news: [],
@@ -10,6 +12,7 @@ export default class HomePage extends React.Component {
 
   async componentDidMount() {
     try {
+      ReactGA.pageview('/')
       this.setState({ loading: true })
       const newsList = await list()
       this.setState({ loading: false, news: newsList || [] })
@@ -72,9 +75,15 @@ export default class HomePage extends React.Component {
                     conocimiento y soluciones de alto impacto.
                   </p>
                   <a
-                    href='https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/Bases_relis_v3pdf.pdf?alt=media&token=3b590d06-26a3-4cc2-b76d-84f7841bb404'
+                    href='https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/Bases_relis_v4.pdf?alt=media&token=5a4b667d-1cc5-4075-88f7-9c8fa1e164a1'
                     className='home__about__button'
                     target='_blank'
+                    onClick={() => {
+                      ReactGA.event({
+                        category: 'home',
+                        action: 'click-ver-bases'
+                      })
+                    }}
                   >
                     <p>Ver Bases </p>
                   </a>

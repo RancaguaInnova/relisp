@@ -1,7 +1,7 @@
 import React from 'react'
 import { list } from '../helpers/news'
 import NewsCardComponent from './../components/NewsCard'
-
+import ReactGA from '../helpers/analytics'
 export default class NewsPage extends React.Component {
   constructor(props, context) {
     super(props, context)
@@ -15,7 +15,6 @@ export default class NewsPage extends React.Component {
     this.setNewsLimit = this.setNewsLimit.bind(this)
   }
 
-
   setNewsLimit() {
     const limit = this.state.newsLimit === 0 ? 4 : 0
     this.setState({
@@ -24,6 +23,7 @@ export default class NewsPage extends React.Component {
   }
 
   async componentDidMount() {
+    ReactGA.pageview('/noticias')
     this.setState({ loading: true })
     try {
       const newsList = await list()
@@ -71,7 +71,7 @@ export default class NewsPage extends React.Component {
         </section>
         <section className='noticias__container'>
           <div className='noticias__container__ripped-background'>
-            <img src='/images/red/ripped-top.png' alt="ripped-top" />
+            <img src='/images/red/ripped-top.png' alt='ripped-top' />
           </div>
           <div className='container'>
             <div className='row'>
@@ -85,7 +85,7 @@ export default class NewsPage extends React.Component {
                     <div />
                   )}
 
-                  { this.renderNews() }
+                  {this.renderNews()}
 
                   {news.length > newsLimit ? (
                     <div className='col-24 col-md-8 offset-md-8'>
@@ -97,7 +97,7 @@ export default class NewsPage extends React.Component {
                       </button>
                     </div>
                   ) : (
-                    <div style={{ marginTop: 200 }}/>
+                    <div style={{ marginTop: 200 }} />
                   )}
                 </div>
               </div>

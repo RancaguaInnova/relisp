@@ -3,18 +3,19 @@ import { list, add } from '../helpers/subscriptions'
 import isEmpty from 'lodash/isEmpty'
 import sortBy from 'lodash/sortBy'
 import remove from 'lodash/remove'
-
+import ReactGA from '../helpers/analytics'
 export default class NetworkPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       director: null,
       subscriptionsList: null,
-      newSubscription: null,
+      newSubscription: null
     }
   }
 
   componentDidMount = async () => {
+    ReactGA.pageview('/red')
     if (!this.state.subscriptionsList) {
       try {
         let subscriptionsList = await list()
@@ -71,7 +72,9 @@ export default class NetworkPage extends React.Component {
             <div className='d-flex'>
               <h5 className='mb-0'>{subscription.name}</h5>
             </div>
-            <p className='d-flex mb-1'>{subscription.position || subscription.role}</p>
+            <p className='d-flex mb-1'>
+              {subscription.position || subscription.role}
+            </p>
             <small className='d-flex'>{subscription.country}</small>
           </li>
         )
@@ -309,10 +312,13 @@ export default class NetworkPage extends React.Component {
                   Coordinadores de la Red
                 </h3>
                 <div className='row'>
-                  <div className='col-xs-24 col-md-8 col-md-offset-4' style={{ textAlign: "center", margin: "auto" }}>
+                  <div
+                    className='col-xs-24 col-md-8 col-md-offset-4'
+                    style={{ textAlign: 'center', margin: 'auto' }}
+                  >
                     <ul className='list-group text-left subscribers'>
-                      { this.renderDirector() }
-                      { this.renderNetwork() }
+                      {this.renderDirector()}
+                      {this.renderNetwork()}
                     </ul>
                   </div>
                 </div>
@@ -329,8 +335,8 @@ export default class NetworkPage extends React.Component {
                       Nombre
                     </label>
                     <input
-                      onChange={ this.handleChange }
-                      name="name"
+                      onChange={this.handleChange}
+                      name='name'
                       type='text'
                       className='form-control'
                       placeholder='Nombre'
@@ -342,10 +348,10 @@ export default class NetworkPage extends React.Component {
                     </label>
                     <input
                       type='text'
-                      name="position"
+                      name='position'
                       className='form-control'
                       placeholder='Cargo'
-                      onChange={ this.handleChange }
+                      onChange={this.handleChange}
                     />
                   </div>
                   <div className='form-group'>
@@ -354,10 +360,10 @@ export default class NetworkPage extends React.Component {
                     </label>
                     <input
                       type='text'
-                      name="country"
+                      name='country'
                       className='form-control'
                       placeholder='País'
-                      onChange={ this.handleChange }
+                      onChange={this.handleChange}
                     />
                   </div>
                   <div className='form-group'>
@@ -366,13 +372,18 @@ export default class NetworkPage extends React.Component {
                     </label>
                     <input
                       type='email'
-                      name="email"
+                      name='email'
                       className='form-control'
                       placeholder='Email'
-                      onChange={ this.handleChange }
+                      onChange={this.handleChange}
                     />
                   </div>
-                  <button type='submit' className='btn btn-default' onClick={ this.handleSubmit } style={{ marginLeft: 10 }}>
+                  <button
+                    type='submit'
+                    className='btn btn-default'
+                    onClick={this.handleSubmit}
+                    style={{ marginLeft: 10 }}
+                  >
                     Suscribir
                   </button>
                 </form>
