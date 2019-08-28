@@ -3,7 +3,9 @@ import { list, add } from '../helpers/subscriptions'
 import isEmpty from 'lodash/isEmpty'
 import sortBy from 'lodash/sortBy'
 import remove from 'lodash/remove'
+import filter from 'lodash/filter'
 import ReactGA from '../helpers/analytics'
+
 export default class NetworkPage extends React.Component {
   constructor(props) {
     super(props)
@@ -19,8 +21,8 @@ export default class NetworkPage extends React.Component {
     if (!this.state.subscriptionsList) {
       try {
         let subscriptionsList = await list()
-        subscriptionsList = sortBy(subscriptionsList, ['name'])
         const director = remove(subscriptionsList, { role: 'Director' })[0]
+        subscriptionsList = sortBy(filter(subscriptionsList, subs => subs.role === 'Coordinador'), ['name'])
 
         if (!isEmpty(subscriptionsList)) {
           this.setState({ subscriptionsList, director })
@@ -80,6 +82,76 @@ export default class NetworkPage extends React.Component {
         )
       })
     }
+  }
+
+  renderSubscriptionForm = () => {
+    return (
+      <div className='row'>
+        <div className='col-24'>
+          <div className='red__valor__container'>
+            <h3 className='red__valor__title -title'>Únete a la Red</h3>
+            <form className='form-inline'>
+              <div className='form-group'>
+                <label className='sr-only' htmlFor='exampleInputEmail3'>
+                  Nombre
+                </label>
+                <input
+                  onChange={this.handleChange}
+                  name='name'
+                  type='text'
+                  className='form-control'
+                  placeholder='Nombre'
+                />
+              </div>
+              <div className='form-group'>
+                <label className='sr-only' htmlFor='exampleInputPassword3'>
+                  Cargo
+                </label>
+                <input
+                  type='text'
+                  name='position'
+                  className='form-control'
+                  placeholder='Cargo'
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className='form-group'>
+                <label className='sr-only' htmlFor='exampleInputEmail3'>
+                  País
+                </label>
+                <input
+                  type='text'
+                  name='country'
+                  className='form-control'
+                  placeholder='País'
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className='form-group'>
+                <label className='sr-only' htmlFor='exampleInputPassword3'>
+                  Email
+                </label>
+                <input
+                  type='email'
+                  name='email'
+                  className='form-control'
+                  placeholder='Email'
+                  onChange={this.handleChange}
+                />
+              </div>
+              <button
+                type='submit'
+                className='btn btn-default'
+                onClick={this.handleSubmit}
+                style={{ marginLeft: 10 }}
+              >
+                Suscribir
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   render() {
@@ -322,71 +394,6 @@ export default class NetworkPage extends React.Component {
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-24'>
-              <div className='red__valor__container'>
-                <h3 className='red__valor__title -title'>Únete a la Red</h3>
-                <form className='form-inline'>
-                  <div className='form-group'>
-                    <label className='sr-only' htmlFor='exampleInputEmail3'>
-                      Nombre
-                    </label>
-                    <input
-                      onChange={this.handleChange}
-                      name='name'
-                      type='text'
-                      className='form-control'
-                      placeholder='Nombre'
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <label className='sr-only' htmlFor='exampleInputPassword3'>
-                      Cargo
-                    </label>
-                    <input
-                      type='text'
-                      name='position'
-                      className='form-control'
-                      placeholder='Cargo'
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <label className='sr-only' htmlFor='exampleInputEmail3'>
-                      País
-                    </label>
-                    <input
-                      type='text'
-                      name='country'
-                      className='form-control'
-                      placeholder='País'
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <label className='sr-only' htmlFor='exampleInputPassword3'>
-                      Email
-                    </label>
-                    <input
-                      type='email'
-                      name='email'
-                      className='form-control'
-                      placeholder='Email'
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <button
-                    type='submit'
-                    className='btn btn-default'
-                    onClick={this.handleSubmit}
-                    style={{ marginLeft: 10 }}
-                  >
-                    Suscribir
-                  </button>
-                </form>
               </div>
             </div>
           </div>
