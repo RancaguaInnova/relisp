@@ -238,13 +238,15 @@ export default class EventPage extends React.Component {
                   id='convocatoria'
                 >
                   <a
-                    href='https://forms.gle/qKuHUipxTRg9R4y29'
-                    target='_blank'
+                    // href='https://forms.gle/qKuHUipxTRg9R4y29'
+                    href='#'
+                    // target='_blank'
                     onClick={() => {
                       ReactGA.event({
                         category: 'chile-19',
                         action: 'click-convocatoria-casos'
                       })
+                      alert("Las convocatorias se encuentran cerradas.")
                     }}
                     className='encuentro__formularios__container'
                   >
@@ -258,14 +260,16 @@ export default class EventPage extends React.Component {
                     </div>
                   </a>
                   <a
-                    href='https://forms.gle/NyMTiw6DLws9khAYA'
-                    target='_blank'
+                    // href='https://forms.gle/NyMTiw6DLws9khAYA'
+                    href='#'
+                    // target='_blank'
                     className='encuentro__formularios__container'
                     onClick={() => {
                       ReactGA.event({
                         category: 'chile-19',
                         action: 'click-convocatoria-papers'
                       })
+                      alert("Las convocatorias se encuentran cerradas.")
                     }}
                   >
                     <i className='fa fa-pencil-square-o' />

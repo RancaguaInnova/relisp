@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import Proptypes from 'prop-types'
-import { pdfjs, Document, Page } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import PropTypes from 'prop-types'
+import ReactGA from '../../helpers/analytics'
+
+import { pdfjs, Document, Page } from 'react-pdf'
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 const buttonSyle = {
   borderRadius: "3px",
@@ -15,7 +17,11 @@ const buttonSyle = {
 
 export default class PDFViewer extends Component {
   static propTypes = {
-    fileUrl: Proptypes.string.isRequired
+    fileUrl: PropTypes.string.isRequired,
+    gaEvent: PropTypes.shape({
+      category: PropTypes.string,
+      action: PropTypes.string,
+    })
   }
 
   state = {
@@ -83,7 +89,10 @@ export default class PDFViewer extends Component {
           <button
             type="button"
             disabled={pageNumber >= numPages}
-            onClick={ () => window.location.assign("https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=dc031599-e553-476c-b9e9-5f7ff50acbc7") }
+            onClick={ () => {
+              ReactGA.event(this.props.gaEvent)
+              window.location.assign("https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=dc031599-e553-476c-b9e9-5f7ff50acbc7")
+            } }
             style={{ ...buttonSyle, backgroundColor: "#E0D593", color: "#722660", padding: "0.4em 2em" }}
           >
             DESCARGAR PROGRAMA

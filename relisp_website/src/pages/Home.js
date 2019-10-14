@@ -39,6 +39,12 @@ export default class HomePage extends React.Component {
                       src='/images/home/banner-inscripcion.gif'
                       alt='inscripciones'
                       style={{ borderRadius: "8px", boxShadow: "2px 5px 5px black" }}
+                      onClick={() => {
+                        ReactGA.event({
+                          category: 'Home',
+                          action: 'click-inscripcion'
+                        })
+                      }}
                     /></a>
                   </div>
                 </div>
@@ -46,7 +52,12 @@ export default class HomePage extends React.Component {
               <div className='col-24 col-md-20 offset-md-2'>
                 <div className='home__hero__container'>
                   <div className='home__hero__landscape'>
-                    <PDFViewer fileUrl={{ url: 'https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=dc031599-e553-476c-b9e9-5f7ff50acbc7'}} />
+                    <PDFViewer
+                      fileUrl={{
+                        url: 'https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=dc031599-e553-476c-b9e9-5f7ff50acbc7'
+                      }}
+                      gaEvent={{ category: "Home", action: "click-descarga-programa" }}
+                    />
                   </div>
                 </div>
               </div>

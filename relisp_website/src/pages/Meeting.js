@@ -177,7 +177,7 @@ export default class NewsPage extends React.Component {
                       </p>
                     </div>
                     <div class='encuentro__encuentros__slide-image'>
-                      <img src='/images/red/co.png' />
+                      <img src='/images/red/co.png' alt="Colombia" />
                     </div>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default class NewsPage extends React.Component {
                       </p>
                     </div>
                     <div class='encuentro__encuentros__slide-image'>
-                      <img src='/images/red/cr.png' />
+                      <img src='/images/red/cr.png' alt="Costa Rica" />
                     </div>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export default class NewsPage extends React.Component {
                       </p>
                     </div>
                     <div class='encuentro__encuentros__slide-image'>
-                      <img src='/images/red/mx.png' />
+                      <img src='/images/red/mx.png' alt="México" />
                     </div>
                   </div>
                 </div>
@@ -307,7 +307,7 @@ export default class NewsPage extends React.Component {
                       </p>
                     </div>
                     <div class='encuentro__encuentros__slide-image'>
-                      <img src='/images/red/br.png' />
+                      <img src='/images/red/br.png' alt="Brazil" />
                     </div>
                   </div>
                 </div>
