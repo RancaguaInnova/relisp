@@ -27,6 +27,10 @@
   line-height: 1.1;
 }
 
+.react-pdf__Page__canvas {
+  margin: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

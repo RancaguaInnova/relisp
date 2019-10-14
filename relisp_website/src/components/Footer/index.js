@@ -12,7 +12,7 @@ export default class FooterComponent extends React.Component {
                   <div className='footer__container'>
                     <div className='footer__wrapper'>
                       <div className='footer__rancagua-logo'>
-                        <img src='/images/logo-corp.png' />
+                        <img src='/images/logo-corp.png' alt="Logo Rancagua" />
                       </div>
                     </div>
                     <div className='footer__wrapper'>
@@ -26,7 +26,7 @@ export default class FooterComponent extends React.Component {
                     </div>
                     <div className='footer__wrapper'>
                       <div className='footer__logo-purple'>
-                        <img src='/images/logo-purple.png' />
+                        <img src='/images/logo-purple.png' alt="Logo Rancagua" />
                       </div>
                     </div>
                   </div>
