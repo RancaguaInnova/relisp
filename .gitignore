@@ -71,3 +71,6 @@ relisp/public/
 
 # dotenv environment variables file
 .env
+/public
+
+.DS_Store
