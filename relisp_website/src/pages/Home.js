@@ -67,12 +67,12 @@ export default class HomePage extends React.Component {
                 </div>
               </div>
               <div className='col-24 col-md-8 offset-md-14'>
-                <a href='/chile-19#convocatoria' className='home__hero__button'>
+                {/* <a href='/chile-19#convocatoria' className='home__hero__button'>
                   <i className='material-icons'>assignment_turned_in</i>
                   <p className='home__hero__text'>Convocatoria Chile 2019</p>
                   <span className='-vertical' />
                   <span className='-arrow' />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default class HomePage extends React.Component {
                     privado y la academia de toda la región, que estén generando
                     conocimiento y soluciones de alto impacto.
                   </p>
-                  <a
+                  {/* <a
                     href='https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/Portada%20Bases%20ELIS-fusionado.pdf?alt=media&token=4176b97f-7734-47de-8d98-1064a5a8a411'
                     className='home__about__button'
                     target='_blank'
@@ -105,7 +105,7 @@ export default class HomePage extends React.Component {
                     }}
                   >
                     <p>Ver Bases </p>
-                  </a>
+                  </a> */}
                   <br />
                   <br /> <br />
                   <br /> <br />

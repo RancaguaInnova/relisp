@@ -3,6 +3,15 @@ import Proptypes from 'prop-types'
 import { pdfjs, Document, Page } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+const buttonSyle = {
+  borderRadius: "3px",
+  padding: "0.2em 1.5em",
+  backgroundColor: "#5DA7B4",
+  boxShadow: "0 4px 3px black",
+  marginRight: "2em",
+  color: "white",
+  fontWeight: "700"
+}
 
 export default class PDFViewer extends Component {
   static propTypes = {
@@ -54,15 +63,7 @@ export default class PDFViewer extends Component {
             Página {pageNumber || (numPages ? 1 : '--')} de {numPages || '--'}
           </p>
           <button
-            style={{
-              borderRadius: "3px",
-              padding: "0.2em 1.5em",
-              backgroundColor: "#5DA7B4",
-              boxShadow: "0 4px 3px black",
-              marginRight: "2em",
-              color: "white",
-              fontWeight: "700"
-          }}
+            style={buttonSyle}
             type="button"
             disabled={pageNumber <= 1}
             onClick={this.previousPage}
@@ -73,16 +74,19 @@ export default class PDFViewer extends Component {
             type="button"
             disabled={pageNumber >= numPages}
             onClick={this.nextPage}
-            style={{
-              borderRadius: "3px",
-              padding: "0.2em 1.5em",
-              backgroundColor: "#5DA7B4",
-              boxShadow: "0 4px 3px black",
-              color: "white",
-              fontWeight: "700"
-          }}
+            style={buttonSyle}
           >
             Siguiente
+          </button>
+          <br />
+          <br />
+          <button
+            type="button"
+            disabled={pageNumber >= numPages}
+            onClick={ () => window.location.assign("https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=dc031599-e553-476c-b9e9-5f7ff50acbc7") }
+            style={{ ...buttonSyle, backgroundColor: "#E0D593", color: "#722660", padding: "0.4em 2em" }}
+          >
+            DESCARGAR PROGRAMA
           </button>
         </div>
       </React.Fragment>
