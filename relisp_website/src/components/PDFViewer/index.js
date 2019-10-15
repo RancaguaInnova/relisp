@@ -17,7 +17,9 @@ const buttonSyle = {
 
 export default class PDFViewer extends Component {
   static propTypes = {
-    fileUrl: PropTypes.string.isRequired,
+    fileUrl: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+    }),
     gaEvent: PropTypes.shape({
       category: PropTypes.string,
       action: PropTypes.string,
@@ -54,11 +56,11 @@ export default class PDFViewer extends Component {
 
   render() {
     const { numPages, pageNumber } = this.state;
-
+    const { fileUrl } = this.props
     return (
       <React.Fragment>
         <Document
-          file={this.props.fileUrl}
+          file={fileUrl}
           onLoadSuccess={this.onDocumentLoadSuccess}
           loading={<p style={{ color: "white", fontWeight: 600 }}>Cargando Programa...</p>}
         >
@@ -91,7 +93,7 @@ export default class PDFViewer extends Component {
             disabled={pageNumber >= numPages}
             onClick={ () => {
               ReactGA.event(this.props.gaEvent)
-              window.location.assign("https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=dc031599-e553-476c-b9e9-5f7ff50acbc7")
+              window.location.assign(fileUrl.url)
             } }
             style={{ ...buttonSyle, backgroundColor: "#E0D593", color: "#722660", padding: "0.4em 2em" }}
           >
