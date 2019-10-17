@@ -53,7 +53,7 @@ export default class HomePage extends React.Component {
                 <div className='home__hero__container'>
                   <div className='home__hero__landscape'>
                     <PDFViewer
-                      fileUrl={{ url: "https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=997af773-8a8e-4990-8d0c-d6935ca0205c" }}
+                      fileUrl={{ url: "https://firebasestorage.googleapis.com/v0/b/elis-ae942.appspot.com/o/programa-elis.pdf?alt=media&token=63cd10ec-afb3-4469-9e4b-793153900b33" }}
                       gaEvent={{ category: "Home", action: "click-descarga-programa" }}
                     />
                   </div>
