@@ -3,6 +3,7 @@ import NewsCardComponent from '../components/NewsCard/index'
 import PDFViewer from '../components/PDFViewer'
 import { list } from '../helpers/news'
 import ReactGA from '../helpers/analytics'
+import BannerButton from '../components/BannerButton'
 
 export default class HomePage extends React.Component {
   state = {
@@ -35,21 +36,15 @@ export default class HomePage extends React.Component {
               <div className='col-24 col-md-20 offset-md-2'>
                 <div className='home__hero__container'>
                   <div className='home__hero__landscape'>
-                    <a href="https://webviews.smartrancagua.com/auth/login" target="_blank" rel="noopener noreferrer"><img
-                      src='/images/home/banner-inscripcion.gif'
-                      alt='inscripciones'
-                      style={{ borderRadius: "8px", boxShadow: "2px 5px 5px black" }}
-                      onClick={() => {
-                        ReactGA.event({
-                          category: 'Home',
-                          action: 'click-inscripcion'
-                        })
-                      }}
-                    /></a>
+                    <BannerButton
+                      to="#"
+                      image="/images/home/suspension-elis.jpeg"
+                      alt="ELIS SUSPENDIDO"
+                    />
                   </div>
                 </div>
               </div>
-              <div className='col-24 col-md-20 offset-md-2'>
+              {/* <div className='col-24 col-md-20 offset-md-2'>
                 <div className='home__hero__container'>
                   <div className='home__hero__landscape'>
                     <PDFViewer
@@ -58,7 +53,7 @@ export default class HomePage extends React.Component {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className='col-24 col-md-20 offset-md-2'>
                 <div className='home__hero__container'>
                   <h2 className='home__hero__title'>
